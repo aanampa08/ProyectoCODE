@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root{
+    --bg-color: #EDEDED; /* color del fondo */
+    --primary-color: white; /* color de las letras */
+    --secondary-color:#121212; /* lo mismo que el anterior pero al reves */
+    --third-color:#FFED00; /* este es muy variable, lo use en el boton de Conoce más y en el Registrate */
+    --login-bg:#4F4F4F; /* color del fondo del login */
+    --header-footer-bgcolor:#000000; /* color del fondo del footer */
+    --login-stroke: #A7A7A7; /* borde del login */
+    --button-unselected-color: #838383; /* boton desseleccionado */
+    --buttons-login-extra: #8A821C; /* botones de google y facebook en el login */
+    --placeholder-color: #A5A5A5; /* color de la letra de Mail, Contraseña, etc */
+    
+    --cancionesmasescuchadas-bg: #242124; /* esto refiere al fondo de la sección */
+    --cancionesmasescuchadas-buttoncontainer: #474747; /* esto refiere al fondo del contenedor de los botones*/
+    --cancionesmasescuchadas-button-color: #D2D2D2; /* el color del boton de play por ej */
+
+    --discografia-bg: #CCCCCC; /* el fondo de discografía */
+    
+    /* fuente de toda la pag */
+    --primary-font: "Plus Jakarta Sans", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: var(--primary-font);
+        box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+header, footer{
+    width: 100%;
+    background-color: var(--header-footer-bgcolor);
+    color: var(--primary-color);
+    height: 10vh;
+    position: sticky;
+    z-index: 10;
+}
+
+.nav-container{
+    width: calc(100% - 200px);
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 2rem 0;
+}
+
+ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    
+}
