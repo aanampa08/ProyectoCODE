@@ -38,24 +38,51 @@ header, footer{
     width: 100%;
     background-color: var(--header-footer-bgcolor);
     color: var(--primary-color);
-    height: 10vh;
+    
     position: sticky;
-    z-index: 10;
+    
+}
+
+.logo-header{
+    width: 64px;
+    display: flex;
+    
 }
 
 .nav-container{
-    width: calc(100% - 200px);
+    width: calc(100% - 80px);
     margin-left: 40px;
     margin-right: 40px;
-    padding: 2rem 0;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
 }
 
-ul{
-    width: 100%;
+.nav-container ul{
     list-style: none;
-    display: flex;
-    justify-content: space-between;
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    gap: 5px;
     
+}
+
+.nav-container ul li{
+    cursor: pointer;
+}
+
+.login-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 5.26px;
+    margin-left: auto;
+    background-image: url('../img/login-vector.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-color: #5C5C5C;
+    border: 1px solid white;
 }
 
 .contenido-principal{
