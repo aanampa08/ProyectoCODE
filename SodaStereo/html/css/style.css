@@ -117,3 +117,22 @@ header, footer{
     object-fit: cover;
     border-radius: 8px;
 }
+
+/*Inicio de carrusel Merch*/
+
+.carousel .carousel-inner .active{
+    display: flex;
+}
+
+.card{
+    width: 17rem;
+    margin: 50px;
+}
+
+.card-img-top{
+    height: 260px;
+    width: 280px;
+}
+
+/*Fin de Merch*/
+
