@@ -118,6 +118,97 @@ header, footer{
     border-radius: 8px;
 }
 
+
+
+#masescuchadas{
+background-color: var(--cancionesmasescuchadas-bg);
+height: 800px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#masescuchadas h2{
+    margin-bottom: 40px;
+    color: white;
+}
+
+.ventanaescucha{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+width: 80%;
+
+
+}
+
+.contenedor-botones{
+    overflow-y: scroll;
+    height: 500px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #767676; 
+    border-radius: 14px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #949494; 
+  }
+
+.botonesreproductor{
+    background-image: url('../img/play.png');
+    background-position: right 30px center;
+    background-repeat: no-repeat;
+    background-size: 45px;
+    padding: 15px 100px 15px 0px;
+    background-color: var(--cancionesmasescuchadas-buttoncontainer);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    margin-bottom: 15px;
+    border-radius: 7.22px;
+}
+
+
+.textoBoton{
+    width: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-align: center;
+    color: var(--cancionesmasescuchadas-button-color);
+    font-weight: 500;
+}
+
+.portadaAlbum{
+    width: 72px;
+    height: auto;
+}
+
+.textoBotonCancion{
+    padding-left: 25px;
+    text-align: left;
+    color: var(--cancionesmasescuchadas-button-color);
+    font-weight: 500;
+ }
+
+
+
+
+
+
 /*Inicio de carrusel Merch*/
 
 .carousel .carousel-inner .active{
