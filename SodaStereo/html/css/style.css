@@ -32,14 +32,17 @@
 
 body{
     background-color: var(--bg-color);
+    
 }
 
 header, footer{
     width: 100%;
     background-color: var(--header-footer-bgcolor);
     color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    position: sticky;
     
 }
 
@@ -50,11 +53,11 @@ header, footer{
 }
 
 .nav-container{
-    width: calc(100% - 80px);
     margin-left: 40px;
     margin-right: 40px;
     padding: 1rem 0;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -63,9 +66,12 @@ header, footer{
     width: 75%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-content: center;
     text-align: center;
     gap: 5px;
-    
+    padding: 0;
+    margin: 0;
 }
 
 .nav-container ul li{
@@ -124,7 +130,6 @@ header, footer{
 background-color: var(--cancionesmasescuchadas-bg);
 height: 800px;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 }
@@ -138,8 +143,10 @@ align-items: center;
     display: flex;
 flex-direction: column;
 justify-content: center;
-width: 80%;
 
+margin-left: 40px;
+    margin-right: 40px;
+    max-width: 1480px;
 
 }
 
@@ -227,3 +234,49 @@ width: 80%;
 
 /*Fin de Merch*/
 
+ul{
+    list-style: none;
+}
+
+footer{
+    flex-wrap: wrap;
+    padding: 7rem 0;
+}
+
+.footcontainer{
+ display: flex;
+ 
+ justify-content: center;
+ align-items: flex-start;
+ max-width: 1480px;
+ margin-left: 40px;
+    margin-right: 40px;
+    
+    
+}
+
+#logo-footer{
+    width: auto;
+    height: 302px;
+}
+
+.footcontainer ul{
+margin-left: 80px;
+}
+
+.footcontainer ul li{
+    margin-bottom: 10px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+#copyr{
+    
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1480px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-right: 40px;
+    text-align: right;
+}
