@@ -94,6 +94,7 @@ header, footer{
     background-size: 20px;
     background-color: #5C5C5C;
     border: 1px solid white;
+    flex-shrink: 0;
 }
 
 .contenido-principal{
