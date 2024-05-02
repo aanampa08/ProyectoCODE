@@ -216,11 +216,10 @@ margin-left: 40px;
 
 .textoBoton{
     width: 10px;
-    margin-left: 35px;
-    margin-right: 35px;
     text-align: center;
     color: var(--cancionesmasescuchadas-button-color);
     font-weight: 500;
+    margin: 0 35px 0 35px;
 }
 
 .portadaAlbum{
@@ -233,6 +232,7 @@ margin-left: 40px;
     text-align: left;
     color: var(--cancionesmasescuchadas-button-color);
     font-weight: 500;
+    margin: 0;
  }
 
 
