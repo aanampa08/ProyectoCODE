@@ -11,7 +11,7 @@
     --button-unselected-color: #838383; /* boton desseleccionado */
     --buttons-login-extra: #8A821C; /* botones de google y facebook en el login */
     --placeholder-color: #A5A5A5; /* color de la letra de Mail, Contraseña, etc */
-    
+    --background-label:#383838;
     --cancionesmasescuchadas-bg: #242124; /* esto refiere al fondo de la sección */
     --cancionesmasescuchadas-buttoncontainer: #474747; /* esto refiere al fondo del contenedor de los botones*/
     --cancionesmasescuchadas-button-color: #D2D2D2; /* el color del boton de play por ej */
@@ -101,7 +101,174 @@ header, footer{
     margin:50px;
     display: flex;
 }
+/* -----------------LOGUIN--------------------------- */
 
+.sec-sesion{
+    margin: 10px auto;
+    width: 400px;
+    height: 620px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--login-bg);
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+.sec-sesion h3{
+    padding: 20px 20px 10px 0;
+    width: 400px;
+    margin-top: 0;
+    color:var(--primary-color);
+}
+.sec-registro{
+    height: 500px;
+}
+.sec-registro h3{
+    padding: 20px 20px 10px 0;
+    width: 400px;
+    margin-top: 0;
+    color:var(--primary-color);
+}
+.sec-input{
+    width: 360px;
+    height: 40px;
+    margin:20px 0 10px 0;
+    border-radius: 8px;
+    background-color: var(--background-label);
+    text-indent: 15px;
+    color: var(--bg-color);
+    border: 1px solid transparent; 
+}
+
+.sec-input::placeholder{
+    color: var(--placeholder-color);
+    text-align: left;
+}
+
+.sec-guardado{
+    display: flex;
+    justify-content: space-between;
+    color: var(--bg-color);
+    margin:10px 0 10px 0;
+    
+}
+.sec-guardado #recordar-contraseña{
+    background-color: var(--login-bg);
+    border: none;
+    color: var(--bg-color);
+    font-weight: bold;
+}
+#recordar-contraseña:hover{
+    color: rgb(255, 237, 0);
+}
+.btn-general{
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
+    border:none;
+    background-color: var(--login-stroke);
+    color: #fff;
+    font-weight: bolder;
+    box-shadow: 0px 5px 5px 
+    rgba(0, 0, 0, 0.53);
+    margin: 10px 0 10px 0;
+}
+
+.btn-general:hover{
+    background-color: #454343;
+    
+}
+.btn-general:active{
+    background-color: #000000;
+}
+
+.estilos-check{
+    color:var(--bg-color);
+    font-size: 15px;
+    margin:20px 0 10px 0;
+
+}
+.info-user{
+    display: flex;
+    justify-content: space-between;
+}
+.info-reg{
+    margin:20px 0 10px 0;
+    background-color: var(--background-label);
+    text-indent: 15px;
+    height: 40px;
+    width: 170px;
+    border-radius: 10px;
+    border: none;
+}
+.info-reg::placeholder{
+    color: var(--placeholder-color);
+    text-align: left;
+}
+.registrate{
+    display: flex;
+    justify-content:end;
+}
+.registrate label{
+    color: white;
+    font-size: 15px;
+    margin-left: 95px;
+    padding: 20px 10px 20px 0;
+   
+}
+.registrate input{
+    background-color: var(--login-bg);
+    border: none;
+    color: rgb(255, 237, 0);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.registrate input:hover{
+    color: var(--buttons-login-extra);
+}
+
+.btns-sesion{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-sesion{
+    margin: 20px 0 20px 0;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: var(--bg-color);
+    background-color: var(--buttons-login-extra);
+    box-shadow: 0px 5px 5px 
+    rgba(0, 0, 0, 0.53);
+}
+.btn-sesion:hover{
+    background-color: #c8be2b;
+}
+.btn-sesion:active{
+    background-color: #5f5a13;
+}
+
+.sec-sesion fieldset{
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    
+}
+.sec-sesion legend{
+    color: white;
+    margin: 0 auto;
+    padding: 10px 10px 0px 10px;
+}
+
+.btn-reg{
+    width: 360px;
+    height: 40px;
+}
+.btn-reg input{
+    width: 100%;
+}
 /* ------------------ discografia ----------------------- */
 #discografia{
     background-color: #a59f9f;

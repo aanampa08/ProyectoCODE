@@ -28,6 +28,59 @@
       </nav>
     </header>
     <main>
+      <section id="inicio-sesion">
+            <div class="sec-sesion">
+                <h3>Iniciar sesión</h3>
+                <input type="email" name="email" id="email" placeholder="Email" class="sec-input" required>
+                <input type="password" name="clave" id="clave" placeholder="Contraseña" class="sec-input" required>
+                <div class="sec-guardado">
+                    <label class="estilos-check">
+                        <input type="checkbox">
+                        Recuerda
+                    </label>
+                    <input type="submit" id="recordar-contraseña" value="¿No recordas tu contraseña?">
+                </div>
+                <input type="submit" id="iniciar-sesion" value="Ingresar sesión" class="btn-general">
+                <div class="registrate">
+                    <label for="registro">¿No tenes cuenta?</label>
+                    <input type="submit" name="registro" value="Registrate">
+                </div>
+                <fieldset>
+                    <legend>o inicia con</legend>
+                    <div class="btns-sesion">
+                        <!-- poner emoji dentro del boton -->
+                        <input type="submit" value="Cuenta de Google" class="btn-sesion">
+                        <input type="submit" value="Cuenta de Facebook" class="btn-sesion">
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="registro">
+            <div class=" sec-sesion sec-registro">
+                <h3>Registro</h3>
+                <div class="info-user">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="info-reg" required>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="info-reg">
+                </div>
+                <input type="email" name="nueva-email" id="nueva-email" placeholder="Email" class="sec-input" required>
+                <input type="text" name="nueva-contra" id="nueva-contra" placeholder="Contraseña" class="sec-input" required>
+                <select name="pais" id="pais" class="sec-input">
+                    <!-- falta el texto de Seleccionar país -->
+                    <option value="argentina">Argentina</option>
+                    <option value="Paraguay">Paraguay</option> 
+                </select>
+                <label class="estilos-check">
+                    <input type="checkbox">
+                    Deseo recibir novedades al correo electrónico
+                </label>
+                <div class="btn-reg">
+                    <input type="submit" value="Registrarse" class="btn-general">
+                </div>
+                
+            </div>
+        </section>
+
       <section id="Principal">
         <div class="contenido-principal">
           <img src="./img/logo-banner.png" alt="Soda Stereo" />
