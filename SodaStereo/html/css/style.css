@@ -103,7 +103,7 @@ header, footer{
 }
 
 /* ------------------ discografia ----------------------- */
-#discografia{
+#Discografía{
     background-color: #a59f9f;
     display: flex;
     flex-direction:column;
@@ -112,7 +112,7 @@ header, footer{
     padding: 40px 0;
 }
 
-#discografia h2{
+#Discografía h2{
     max-width: 1100px;
     width: 90%;
     margin: 0 auto;
@@ -278,26 +278,37 @@ margin-left: 40px;
 
 
 
+/*Inicio de carrusel Tienda*/
 
 
 
-/*Inicio de carrusel Merch*/
-
-.carousel .carousel-inner .active{
-    display: flex;
+#Tienda h2{
+   margin-top: 1em;
+   margin-bottom: 1em;
+   font-size: 40px;
+   text-align: center;
 }
 
 .card{
-    width: 17rem;
-    margin: 50px;
+    width: 18rem;
+   margin: 50px;
 }
 
 .card-img-top{
     height: 260px;
     width: 280px;
+    justify-content: center;
+    background-size: cover;
+    border-bottom: 1px solid #b8b6b6;
 }
 
-/*Fin de Merch*/
+
+button span{
+    background-color: #a59f9f;
+    border-radius: 15%;
+    }
+
+/*Fin de la tieda*/
 
 ul{
     list-style: none;
@@ -306,6 +317,7 @@ ul{
 footer{
     flex-wrap: wrap;
     padding: 7rem 0;
+    z-index: 1;
 }
 
 .footcontainer{
@@ -316,6 +328,7 @@ footer{
  max-width: 1480px;
  margin-left: 40px;
     margin-right: 40px;
+  
     
     
 }
@@ -327,6 +340,7 @@ footer{
 
 .footcontainer ul{
 margin-left: 80px;
+
 }
 
 .footcontainer ul li{
