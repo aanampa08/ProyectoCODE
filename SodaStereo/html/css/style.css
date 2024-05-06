@@ -269,6 +269,76 @@ header, footer{
 .btn-reg input{
     width: 100%;
 }
+
+/* ------------------ banner ----------------------- */
+#Principal {
+    background-color: var(--secondary-color);    
+}
+
+.contenido-principal-div {
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: justify;
+    max-width: 1480px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenido-principal-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-principal-logo {
+    width: auto;
+    max-width: 100%;
+}
+
+.contenido-principal-p {
+
+}
+
+.contenido-principal-p2 {
+    color: var(--primary-color);
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: justify;
+}
+
+.contenido-principal-fotos{
+    display: flex;
+    flex-direction: row;
+}
+
+/* ------------------ historia ----------------------- */
+#historia {
+    background-color: var(--discografia-bg);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.historia-div {
+    background-color: var(--discografia-bg);
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: justify;
+    max-width: 1480px;
+
+}
+.historia-h2 {
+    padding-top: 20px;
+}
+
+.historia-p{
+    margin-top: 20px;
+}
+
 /* ------------------ discografia ----------------------- */
 #Discografía{
     background-color: #a59f9f;
