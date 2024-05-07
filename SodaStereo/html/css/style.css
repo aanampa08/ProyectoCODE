@@ -150,6 +150,9 @@ header, footer{
     justify-content: space-between;
     color: var(--bg-color);
     margin:10px 0 10px 0;
+}
+.sec-guardado label input{
+    width: 20px;
     
 }
 .sec-guardado #recordar-contraseña{
@@ -157,7 +160,10 @@ header, footer{
     border: none;
     color: var(--bg-color);
     font-weight: bold;
+    text-align: right;
+    height: 60px;
 }
+
 #recordar-contraseña:hover{
     color: rgb(255, 237, 0);
 }
@@ -207,21 +213,29 @@ header, footer{
 }
 .registrate{
     display: flex;
-    justify-content:end;
+    justify-content:space-evenly;
+    
 }
 .registrate label{
     color: white;
     font-size: 15px;
     margin-left: 95px;
-    padding: 20px 10px 20px 0;
+    margin-right: 15px;
+    padding: 20px 0 20px 0;
+    width: 220px;
+    align-content:end;
+    
    
 }
-.registrate input{
+.registrate label input{
     background-color: var(--login-bg);
     border: none;
     color: rgb(255, 237, 0);
     font-size: 15px;
     font-weight: bold;
+    text-align: right;
+    width: 80px;
+    padding-right: 0;
 }
 
 .registrate input:hover{
@@ -295,10 +309,6 @@ header, footer{
 .contenido-principal-logo {
     width: auto;
     max-width: 100%;
-}
-
-.contenido-principal-p {
-
 }
 
 .contenido-principal-p2 {
