@@ -537,20 +537,24 @@ margin-left: 40px;
 
 
 
-/*Inicio de carrusel Tienda*/
+/*------------ Inicio de carrusel Tienda-------------*/
 
+#Tienda{
+    background-color: #f9f9f9;
+    padding: 40px 0;
 
-
-#Tienda h2{
-   margin-top: 1em;
-   margin-bottom: 1em;
-   font-size: 40px;
-   text-align: center;
 }
 
+#Tienda h2{
+    margin-left: 170px;
+    font-size: 2.3rem;
+    
+   }
+
 .card{
-    width: 18rem;
+    width: 16rem;
    margin: 50px;
+   
 }
 
 .card-img-top{
@@ -567,7 +571,7 @@ button span{
     border-radius: 15%;
     }
 
-/*Fin de la tieda*/
+/*---------------Fin de la tieda---------------*/
 
 ul{
     list-style: none;
