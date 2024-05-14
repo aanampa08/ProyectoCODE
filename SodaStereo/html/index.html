@@ -24,11 +24,8 @@
           <li><a href="#Discografía">Discografía</a></li>
           <li><a href="#Tienda">Tienda</a></li>
         </ul>
-        <button class="login-button"></button>
-      </nav>
-    </header>
-    <main>
-      <section id="inicio-sesion">
+        <button class="login-button">
+          <section id="inicio-sesion">
             <div class="sec-sesion">
                 <h3>Iniciar sesión</h3>
                 <input type="email" name="email" id="email" placeholder="Email" class="sec-input" required>
@@ -59,8 +56,13 @@
             </div>
         </section>
 
+        </button>
+      </nav>
+    </header>
+    <main>
+      
         <section class="registro">
-            <div class=" sec-sesion sec-registro">
+            <div class="sec-sesion sec-registro">
                 <h3>Registro</h3>
                 <div class="info-user">
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="info-reg" required>
@@ -70,6 +72,7 @@
                 <input type="text" name="nueva-contra" id="nueva-contra" placeholder="Contraseña" class="sec-input" required>
                 <select name="pais" id="pais" class="sec-input">
                     <!-- falta el texto de Seleccionar país -->
+                    <option value="">Seleccionar país</option>
                     <option value="argentina">Argentina</option>
                     <option value="Paraguay">Paraguay</option> 
                 </select>
