@@ -434,10 +434,8 @@ input[type="checkbox"]:checked {
     background-color: var(--discografia-bg);
     margin: 0 auto;
     width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
     text-align: justify;
-    max-width: 1480px;
+    max-width: 1140px;
 
 }
 .historia-h2 {
@@ -459,7 +457,7 @@ input[type="checkbox"]:checked {
 }
 
 #Discografía h2{
-    max-width: 1100px;
+    max-width: 1140px;
     width: 90%;
     margin: 0 auto;
     
@@ -528,7 +526,7 @@ input[type="checkbox"]:checked {
 
 .sec-discos{
     width: 90%;
-    max-width: 1100px;
+    max-width: 1140px;
     margin:40px auto; 
     display: grid;
     gap:40px;
@@ -557,7 +555,7 @@ justify-content: center;
 
 margin-left: 40px;
     margin-right: 40px;
-    max-width: 1480px;
+    max-width: 1140px
 
 }
 
@@ -633,15 +631,16 @@ margin-left: 40px;
 }
 
 #Tienda h2{
-    margin-left: 170px;
     font-size: 2.3rem;
-    
    }
 
 .card{
     width: 16rem;
-   margin: 50px;
-   
+    margin-bottom: 15px;
+}
+
+.carousel {
+    margin: 55px 0 !important;
 }
 
 .card-img-top{
@@ -652,6 +651,40 @@ margin-left: 40px;
     border-bottom: 1px solid #b8b6b6;
 }
 
+.container{
+        /* --bs-gutter-x: 1.5rem; */
+    /* --bs-gutter-y: 0; */
+    width: 100%;
+    /* padding-right: calc(var(--bs-gutter-x) * .5); */
+    /* padding-left: calc(var(--bs-gutter-x) * .5); */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    
+    max-width: 1140px !important;
+    padding: 0 !important;
+}
+
+.row{
+    margin: 0 !important;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    
+}
+
+.carousel-item.active{
+ display: flex !important;
+ justify-content: center !important;
+}
+
+.col-md-4{
+    display: flex !important;
+    width: auto !important;
+}
+
+.col-md-12{
+    padding: 0 !important;
+}
 
 button span{
     background-color: #a59f9f;
@@ -681,6 +714,10 @@ footer{
   
     
     
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: auto !important;
 }
 
 #logo-footer{
