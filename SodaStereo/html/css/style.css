@@ -31,6 +31,7 @@
 }
 
 body{
+    padding-top: 6rem;
     background-color: var(--bg-color);
     
 }
@@ -46,6 +47,13 @@ header, footer{
     
 }
 
+header{
+position: fixed;
+top: 0;
+z-index: 100;
+}
+
+
 .logo-header{
     width: 64px;
     display: flex;
@@ -53,8 +61,7 @@ header, footer{
 }
 
 .nav-container{
-    margin-left: 40px;
-    margin-right: 40px;
+    max-width: 1700px;
     padding: 1rem 0;
     display: flex;
     justify-content: center;
@@ -262,6 +269,8 @@ input[type="checkbox"] {
 }
 
 
+
+
 input[type="checkbox"]:checked {
   }
   
@@ -306,7 +315,7 @@ input[type="checkbox"]:checked {
 }
 .registrate{
     display: flex;
-    
+    justify-content: flex-end;
 }
 .registrate label{
     padding: 25px 0;
@@ -380,10 +389,9 @@ input[type="checkbox"]:checked {
     background-color: var(--secondary-color);
     margin: 0 auto;
     width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
+    
     text-align: justify;
-    max-width: 1480px;
+    max-width: 1700px;
     display: flex;
     flex-direction: row;
 }
@@ -391,18 +399,28 @@ input[type="checkbox"]:checked {
 .contenido-principal-img {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 55px;
+    margin-right: 75px;
+}
+
+.btn-banner{
+    width: auto;
+    padding: 10px 65px;
+    border-radius: 12.35px;
+    border: none;
+    background-color: var(--third-color);
+    font-weight: bold;
 }
 
 .contenido-principal-logo {
-    width: auto;
-    max-width: 100%;
+    width: 250px;
 }
 
 .contenido-principal-p2 {
     color: var(--primary-color);
     width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
+    
     text-align: justify;
 }
 
@@ -423,15 +441,79 @@ input[type="checkbox"]:checked {
   }
   
 
+
+
+  .gallery{
+    width: 120vw;
+    display: flex;
+    flex-direction: row;
+   
+    row-gap: 1rem;
+    & .image-container{
+        flex: 1;
+        width: 100%;
+        height: 750px;
+        transition: flex 0.3s ease-in;
+        position: relative;
+        overflow: hidden;
+        @media only screen and (width > 480px){
+            &:hover {
+                flex: 2;
+
+            }
+        }
+
+        & .image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+  
+
+  
+}
+
+.gallery figure{
+    margin: 0 !important;
+}
+
+
+
+.image-container .description{
+    position: absolute;
+    text-align: center;
+    
+    bottom: 0;
+    opacity: 0;
+    margin: 0;
+    filter: grayscale(0);
+    padding: 25px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow:  0px 0px 40px 40px rgba(0, 0, 0, 0.1);
+}
+
+.description h3, .description p{
+    
+    color: var(--primary-color);
+}
+
+
+.image-container:hover .description{
+    opacity: 1;
+    transition: 0.3s ease-in;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow:  0px 0px 40px 40px rgba(0, 0, 0, 0.9);
+}
+
 /* ------------------ historia ----------------------- */
 #historia {
-    background-color: var(--discografia-bg);
-    padding-top: 60px;
-    padding-bottom: 60px;
+    background-color: var(--bg-color);
+    padding: 150px 0;
 }
 
 .historia-div {
-    background-color: var(--discografia-bg);
     margin: 0 auto;
     width: 100%;
     text-align: justify;
@@ -453,7 +535,7 @@ input[type="checkbox"]:checked {
     flex-direction:column;
     justify-content: center;
     align-content:center;
-    padding: 40px 0;
+    padding: 150px 0;
 }
 
 #Discografía h2{
@@ -537,7 +619,7 @@ input[type="checkbox"]:checked {
 
 #masescuchadas{
 background-color: var(--cancionesmasescuchadas-bg);
-height: 800px;
+padding: 150px 0;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -626,7 +708,7 @@ margin-left: 40px;
 
 #Tienda{
     background-color: #f9f9f9;
-    padding: 40px 0;
+    padding: 150px 0;
 
 }
 

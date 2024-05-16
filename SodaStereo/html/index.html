@@ -10,6 +10,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Soda Estereo</title>
   </head>
@@ -19,7 +20,7 @@
       <nav class="nav-container">
         <img class="logo-header" src="./img/logo-main.png" alt="soda stereo" />
         <ul>
-          <li><a href="#Historia">Historia</a></li>
+          <li><a href="#historia">Historia</a></li>
           <li><a href="#masescuchadas">Exitos</a></li>
           <li><a href="#Discografía">Discografía</a></li>
           <li><a href="#Tienda">Tienda</a></li>
@@ -88,7 +89,7 @@
         </section>
 
       <section id="Principal">
-        <div class="contenido-principal-div">
+        <div class="contenido-principal-div" data-aos="zoom-in" data-aos-duration="1000">
           <div class="contenido-principal-img">
             <img class="contenido-principal-logo" src="./img/logo-banner.png" alt="Soda Stereo" />
 
@@ -99,18 +100,41 @@
                 también el merchandising oficial de la banda. Únete y disfruta del universo soda.
               </p>
             </div>
+            <a href="#historia"><button class="btn-banner">Conoce más</button></a>
 
           </div>
 
-          <div class="contenido-principal-fotos">
-            <div><img src="./img/GustavoCeratti.jpg" alt="Gustavo Cerati" /></div>
-            <div><img src="./img/ZetaBosio.png" alt="Zeta Bosio" /></div>
-            <div><img src="./img/CharlyAlberti.jpg" alt="Charly Alberti" /></div>
-          </div>
+          
+            <div class="gallery">
+              <figure class="image-container">
+                <img src="./img/GustavoCeratti.jpg" alt="Gustavo Cerati" class="image">
+                <div class="description">
+                  <h3>Gustavo Cerati</h3>
+                  <p>Voz y guitarra</p>
+                </div>
+                
+              </figure>
+              <figure class="image-container">
+                <img src="./img/ZetaBosio.png" alt="Zeta Bosio" class="image">
+                <div class="description">
+                  <h3>Zeta Bosio</h3>
+                  <p>Bajo</p>
+                </div>
+              </figure>
+              <figure class="image-container">
+                <img src="./img/CharlyAlberti.jpg" alt="Charly Alberti" class="image">
+                <div class="description">
+                  <h3>Charly Alberti</h3>
+                  <p>Bateria y percusión</p>
+                </div>
+              </figure>
+            </div>
+          
+        
         </div>
       </section>
-      <section id="historia">
-        <div class="historia-div">
+      <section id="historia" >
+        <div class="historia-div" data-aos="fade-down" data-aos-duration="1000">
           <h2 class="historia-h2">Historia</h2>
           <p class="historia-p">
               Fue una influyente banda internacional de rock argentina formada en 1982 en Buenos Aires,
@@ -131,7 +155,7 @@
         </div>
       </section>
       <section id="masescuchadas">
-        <div class="ventanaescucha">
+        <div class="ventanaescucha" data-aos="fade-down" data-aos-duration="1000">
           <h2>Canciones más escuchadas</h2>
           <div class="contenedor-botones">
             <button class="botonesreproductor">
@@ -210,6 +234,7 @@
       <!-- ------------------------------- DISCOGRAFIA ----------------------------------- -->
 
     <section id="Discografía">
+      <div data-aos="fade-down" data-aos-duration="1000">
       <h2>Discografía</h2>
       <div class="sec-discos">
         <div class="album-img">
@@ -291,13 +316,14 @@
 
         </div>
       </div>
+    </div>
     </section>
 
     <!-- -------------- Tienda ---------------- -->
     
          <section id="Tienda">
         
-        <div class="container">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
           <div class="row">
             <div class="col-md-12">
               <h2>Tienda</h2>
@@ -609,5 +635,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
