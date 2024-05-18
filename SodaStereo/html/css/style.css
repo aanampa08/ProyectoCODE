@@ -69,8 +69,6 @@ z-index: 100;
     position: relative;
 }
 
-
-
 .nav-container ul{
     list-style: none;
     max-width: 800px;
@@ -161,15 +159,40 @@ z-index: 100;
 /* con esto se activa el registro */
 .registro{
     position: absolute;
-    display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    z-index: 3;
 }
+
+#cerrar{
+    position: absolute;
+    margin-left: 375px;
+    width: 2%;
+    
+}
+
+.overlay{
+    background: rgba(0,0,0,.3);
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-active{
+    pointer-events: none;
+    cursor: default;
+}
+
 
 .sec-registro{
     width: 450px;
     padding: 30px 25px;
+    background: var(--login-bg);
 }
 .sec-registro h3{
     padding: 20px 0 0 5px;
@@ -201,13 +224,6 @@ z-index: 100;
     width: auto;
     
 }
-
-
-
-
-  
-
-
 
 .sec-guardado #recordar-contraseña{
     background-color: var(--login-bg);
@@ -325,7 +341,8 @@ input[type="checkbox"]:checked {
     
    
 }
-.registrate label input{
+
+.registrate label a{
     background-color: var(--login-bg);
     border: none;
     color: rgb(255, 237, 0);

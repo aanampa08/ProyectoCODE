@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    
     <title>Soda Estereo</title>
   </head>
 
@@ -42,7 +42,10 @@
                 <div class="registrate">
                     <label for="registro">
                       ¿No tenes cuenta?
-                      <input type="submit" name="registro" value="Registrate">
+                      
+                      
+                      <a href="javascript:mostrar_registro()" id="aRegistrar">Registrarse</a>
+                      
                     </label>
                     
                 </div>
@@ -62,31 +65,7 @@
     </header>
     <main>
       
-        <section class="registro">
-            <div class="sec-sesion sec-registro">
-                <h3>Registro</h3>
-                <div class="info-user">
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="info-reg" required>
-                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="info-reg">
-                </div>
-                <input type="email" name="nueva-email" id="nueva-email" placeholder="Email" class="sec-input" required>
-                <input type="text" name="nueva-contra" id="nueva-contra" placeholder="Contraseña" class="sec-input" required>
-                <select name="pais" id="pais" class="sec-input">
-                    <!-- falta el texto de Seleccionar país -->
-                    <option value="">Seleccionar país</option>
-                    <option value="argentina">Argentina</option>
-                    <option value="Paraguay">Paraguay</option> 
-                </select>
-                <label class="estilos-check">
-                    <input type="checkbox">
-                    Deseo recibir novedades al correo electrónico
-                </label>
-                <div class="btn-reg">
-                    <input type="submit" value="Registrarse" class="btn-general">
-                </div>
-                
-            </div>
-        </section>
+      <section class="registro" id="sectionRegistro"></section>
 
       <section id="Principal">
         <div class="contenido-principal-div" data-aos="zoom-in" data-aos-duration="1000">
@@ -634,8 +613,9 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js"></script>
+   
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
     <script>
       AOS.init();
     </script>
