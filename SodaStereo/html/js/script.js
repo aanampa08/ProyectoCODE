@@ -21,7 +21,7 @@ const vecPaises= new Array(
     ,"Dominica"
     ,"Granda"
     ,"Jamaica"
-    ,"EeUu"
+    ,"Estados Unidos"
     ,"México"
     ,"Panamá"
 );
