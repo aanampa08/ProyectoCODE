@@ -1,28 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-:root{
-    --bg-color: #EDEDED; /* color del fondo */
-    --primary-color: white; /* color de las letras */
-    --secondary-color:#121212; /* lo mismo que el anterior pero al reves */
-    --third-color:#FFED00; /* este es muy variable, lo use en el boton de Conoce más y en el Registrate */
-    --login-bg:#4F4F4F; /* color del fondo del login */
-    --header-footer-bgcolor:#000000; /* color del fondo del footer */
-    --login-stroke: #A7A7A7; /* borde del login */
-    --button-unselected-color: #838383; /* boton desseleccionado */
-    --buttons-login-extra: #8A821C; /* botones de google y facebook en el login */
-    --placeholder-color: #A5A5A5; /* color de la letra de Mail, Contraseña, etc */
-    --background-label:#383838;
-    --cancionesmasescuchadas-bg: #242124; /* esto refiere al fondo de la sección */
-    --cancionesmasescuchadas-buttoncontainer: #474747; /* esto refiere al fondo del contenedor de los botones*/
-    --cancionesmasescuchadas-button-color: #D2D2D2; /* el color del boton de play por ej */
+:root {
+    --bg-color: #EDEDED;
+    /* color del fondo */
+    --primary-color: white;
+    /* color de las letras */
+    --secondary-color: #121212;
+    /* lo mismo que el anterior pero al reves */
+    --third-color: #FFED00;
+    /* este es muy variable, lo use en el boton de Conoce más y en el Registrate */
+    --login-bg: #4F4F4F;
+    /* color del fondo del login */
+    --header-footer-bgcolor: #000000;
+    /* color del fondo del footer */
+    --login-stroke: #A7A7A7;
+    /* borde del login */
+    --button-unselected-color: #838383;
+    /* boton desseleccionado */
+    --buttons-login-extra: #8A821C;
+    /* botones de google y facebook en el login */
+    --placeholder-color: #A5A5A5;
+    /* color de la letra de Mail, Contraseña, etc */
+    --background-label: #383838;
+    --cancionesmasescuchadas-bg: #242124;
+    /* esto refiere al fondo de la sección */
+    --cancionesmasescuchadas-buttoncontainer: #474747;
+    /* esto refiere al fondo del contenedor de los botones*/
+    --cancionesmasescuchadas-button-color: #D2D2D2;
+    /* el color del boton de play por ej */
 
-    --discografia-bg: #CCCCCC; /* el fondo de discografía */
-    
+    --discografia-bg: #CCCCCC;
+    /* el fondo de discografía */
+
     /* fuente de toda la pag */
     --primary-font: "Plus Jakarta Sans", sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -30,37 +44,39 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     padding-top: 6rem;
     background-color: var(--bg-color);
-    
+
 }
 
-header, footer{
+header,
+footer {
+    
     width: 100%;
     background-color: var(--header-footer-bgcolor);
     color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
+
+
 }
 
-header{
-position: fixed;
-top: 0;
-z-index: 100;
+header {
+    position: fixed;
+    top: 0;
+    z-index: 3;
 }
 
 
-.logo-header{
+.logo-header {
     width: 64px;
     display: flex;
-    
+
 }
 
-.nav-container{
+.nav-container {
     max-width: 1700px;
     padding: 1rem 0;
     display: flex;
@@ -69,11 +85,14 @@ z-index: 100;
     position: relative;
 }
 
-.nav-container ul{
+.menu{
+    display: flex;
+}
+.nav-container ul {
     list-style: none;
     max-width: 800px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-content: center;
     gap: 5px;
@@ -81,17 +100,17 @@ z-index: 100;
     margin: 0 100px 0 20px;
 }
 
-.nav-container ul li{
+.nav-container ul li {
     text-align: center;
 }
 
 
-.nav-container ul li a{
+.nav-container ul li a {
     color: var(--bg-color);
     text-decoration: none;
 }
 
-.login-button{
+.login-button {
     width: 40px;
     height: 40px;
     border-radius: 5.26px;
@@ -106,28 +125,29 @@ z-index: 100;
     cursor: default;
 }
 
-.contenido-principal{
-    margin:50px;
+.contenido-principal {
+    margin: 50px;
     display: flex;
 }
+
 /* -----------------LOGIN--------------------------- */
 
-.nav-container .login-button section#inicio-sesion{
+.nav-container .login-button section#inicio-sesion {
     visibility: hidden;
     cursor: default;
 }
 
-.nav-container .login-button:hover section#inicio-sesion{
+.nav-container .login-button:hover section#inicio-sesion {
     visibility: visible;
     cursor: default;
 }
 
-.nav-container .login-button section#inicio-sesion:hover .sec-sesion{
+.nav-container .login-button section#inicio-sesion:hover .sec-sesion {
     visibility: visible;
     cursor: default;
 }
 
-.login-button #inicio-sesion{
+.login-button #inicio-sesion {
     right: 0;
     position: absolute;
     top: 3vh;
@@ -135,13 +155,13 @@ z-index: 100;
     padding: 35px;
 }
 
-.login-button #inicio-sesion .sec-sesion{
+.login-button #inicio-sesion .sec-sesion {
     position: absolute;
     top: 6vh;
     right: 0;
 }
 
-.sec-sesion{
+.sec-sesion {
     width: 450px;
     border-radius: 20px;
     padding: 30px 25px;
@@ -150,30 +170,31 @@ z-index: 100;
     align-items: left;
     flex-direction: column;
 }
-.sec-sesion h3{
+
+.sec-sesion h3 {
     padding: 20px 0 0 5px;
     text-align: left;
-    color:var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* con esto se activa el registro */
-.registro{
+.registro {
     position: absolute;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 4;
 }
 
-#cerrar{
+#cerrar {
     position: absolute;
     margin-left: 375px;
     width: 2%;
-    
+
 }
 
-.overlay{
-    background: rgba(0,0,0,.3);
-    top:0;
+.overlay {
+    background: rgba(0, 0, 0, .3);
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -183,49 +204,51 @@ z-index: 100;
     justify-content: center;
 }
 
-.not-active{
+.not-active {
     pointer-events: none;
     cursor: default;
 }
 
 
-.sec-registro{
+.sec-registro {
     width: 450px;
     padding: 30px 25px;
     background: var(--login-bg);
 }
-.sec-registro h3{
+
+.sec-registro h3 {
     padding: 20px 0 0 5px;
-    color:var(--primary-color);
+    color: var(--primary-color);
 }
-.sec-input{
+
+.sec-input {
     height: 40px;
-    margin:20px 0 10px 0;
+    margin: 20px 0 10px 0;
     border-radius: 8px;
     background-color: var(--background-label);
     text-indent: 15px;
     color: var(--bg-color);
-    border: 1px solid transparent; 
+    border: 1px solid transparent;
 }
 
-.sec-input::placeholder{
+.sec-input::placeholder {
     color: var(--placeholder-color);
     text-align: left;
 }
 
-.sec-guardado{
+.sec-guardado {
     display: flex;
     justify-content: space-between;
     color: var(--bg-color);
     padding: 25px 0;
 }
 
-.sec-guardado label{
+.sec-guardado label {
     width: auto;
-    
+
 }
 
-.sec-guardado #recordar-contraseña{
+.sec-guardado #recordar-contraseña {
     background-color: var(--login-bg);
     width: auto;
     border: none;
@@ -233,41 +256,42 @@ z-index: 100;
     font-weight: bold;
 }
 
-#recordar-contraseña:hover{
+#recordar-contraseña:hover {
     color: rgb(255, 237, 0);
 }
-.btn-general{
+
+.btn-general {
     height: 40px;
     border-radius: 10px;
     margin: 20px 0 10px 0;
-    border:none;
+    border: none;
     background-color: var(--login-stroke);
     color: #fff;
     font-weight: bolder;
-    box-shadow: 0px 5px 5px 
-    rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
     margin: 10px 0 10px 0;
 }
 
-.btn-general:hover{
+.btn-general:hover {
     background-color: #454343;
-    
+
 }
-.btn-general:active{
+
+.btn-general:active {
     background-color: #000000;
 }
 
-.estilos-check{
-    
-    color:var(--bg-color);
+.estilos-check {
+
+    color: var(--bg-color);
     font-size: 15px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.sec-registro .estilos-check{
-    
+.sec-registro .estilos-check {
+
     padding: 25px 0;
 }
 
@@ -281,68 +305,69 @@ input[type="checkbox"] {
     outline: none;
     transition: outline 0.1s;
     background-color: #383838;
-    
+
 }
 
 
 
 
-input[type="checkbox"]:checked {
-  }
-  
-  input[type="checkbox"]:not(:disabled):checked {
+input[type="checkbox"]:checked {}
+
+input[type="checkbox"]:not(:disabled):checked {
     background-image: url('../img/check.png');
     background-size: 18px;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #1f1f1f;
-  }
-  
+}
 
-  input[type="checkbox"]:disabled {
+
+input[type="checkbox"]:disabled {
     background-color: var(--checkbox-disabled-bg-color);
-  }
-  
-  input[type="checkbox"]:disabled:checked {
-   
-  }
+}
 
-  input[type="checkbox"]:not(:disabled):hover {
+input[type="checkbox"]:disabled:checked {}
+
+input[type="checkbox"]:not(:disabled):hover {
     background-color: #303030;
-  }
+}
 
-.info-user{
+.info-user {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 15px;
 }
-.info-reg{
-    margin:20px 0 10px 0;
+
+.info-reg {
+    margin: 20px 0 10px 0;
     background-color: var(--background-label);
     text-indent: 15px;
     height: 40px;
     border-radius: 10px;
     border: none;
 }
-.info-reg::placeholder{
+
+.info-reg::placeholder {
     color: var(--placeholder-color);
     text-align: left;
 }
-.registrate{
+
+.registrate {
     display: flex;
     justify-content: flex-end;
 }
-.registrate label{
+
+.registrate label {
     padding: 25px 0;
     color: white;
     font-size: 15px;
     width: auto;
-    
-   
+
+
 }
 
-.registrate label a{
+.registrate label a {
     background-color: var(--login-bg);
     border: none;
     color: rgb(255, 237, 0);
@@ -353,39 +378,42 @@ input[type="checkbox"]:checked {
     padding-right: 0;
 }
 
-.registrate input:hover{
+.registrate input:hover {
     color: var(--buttons-login-extra);
 }
 
-.btns-sesion{
+.btns-sesion {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
-.btn-sesion{
+
+.btn-sesion {
     margin: 15px 0;
     padding: 10px;
     border: none;
     border-radius: 10px;
     color: var(--bg-color);
     background-color: var(--buttons-login-extra);
-    box-shadow: 0px 5px 5px 
-    rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
 }
-.btn-sesion:hover{
+
+.btn-sesion:hover {
     background-color: #c8be2b;
 }
-.btn-sesion:active{
+
+.btn-sesion:active {
     background-color: #5f5a13;
 }
 
-.sec-sesion fieldset{
+.sec-sesion fieldset {
     border-left: none;
     border-right: none;
     border-bottom: none;
-    
+
 }
-.sec-sesion legend{
+
+.sec-sesion legend {
     font-size: 15px;
     color: white;
     margin: 0 auto;
@@ -393,20 +421,20 @@ input[type="checkbox"]:checked {
 }
 
 
-.btn-reg input{
+.btn-reg input {
     width: 100%;
 }
 
 /* ------------------ banner ----------------------- */
 #Principal {
-    background-color: var(--secondary-color);    
+    background-color: var(--secondary-color);
 }
 
 .contenido-principal-div {
     background-color: var(--secondary-color);
     margin: 0 auto;
     width: 100%;
-    
+
     text-align: justify;
     max-width: 1700px;
     display: flex;
@@ -421,7 +449,7 @@ input[type="checkbox"]:checked {
     margin-right: 75px;
 }
 
-.btn-banner{
+.btn-banner {
     width: auto;
     padding: 10px 65px;
     border-radius: 12.35px;
@@ -437,11 +465,11 @@ input[type="checkbox"]:checked {
 .contenido-principal-p2 {
     color: var(--primary-color);
     width: 100%;
-    
+
     text-align: justify;
 }
 
-.contenido-principal-fotos{
+.contenido-principal-fotos {
     display: flex;
     flex-direction: row;
 }
@@ -450,30 +478,34 @@ input[type="checkbox"]:checked {
 .contenido-principal-fotos img {
     height: 100%;
     border-radius: 10px;
-    transition: box-shadow 0.3s ease; /* Agrega una transición suave al efecto */
-  }
-  
-  .contenido-principal-fotos img:hover {
-    box-shadow: 0 0 5px 2px rgba(255, 237, 0, 0.7); /* Resaltado en blanco */
-  }
-  
+    transition: box-shadow 0.3s ease;
+    /* Agrega una transición suave al efecto */
+}
+
+.contenido-principal-fotos img:hover {
+    box-shadow: 0 0 5px 2px rgba(255, 237, 0, 0.7);
+    /* Resaltado en blanco */
+}
 
 
 
-  .gallery{
+
+.gallery {
     width: 120vw;
     display: flex;
     flex-direction: row;
-   
+
     row-gap: 1rem;
-    & .image-container{
+
+    & .image-container {
         flex: 1;
         width: 100%;
         height: 750px;
         transition: flex 0.3s ease-in;
         position: relative;
         overflow: hidden;
-        @media only screen and (width > 480px){
+
+        @media only screen and (width > 480px) {
             &:hover {
                 flex: 2;
 
@@ -487,41 +519,42 @@ input[type="checkbox"]:checked {
             object-position: center;
         }
     }
-  
 
-  
+
+
 }
 
-.gallery figure{
+.gallery figure {
     margin: 0 !important;
 }
 
 
 
-.image-container .description{
+.image-container .description {
     position: absolute;
     text-align: center;
-    
+
     bottom: 0;
     opacity: 0;
     margin: 0;
     filter: grayscale(0);
     padding: 25px 0;
     background-color: rgba(0, 0, 0, 0.1);
-    box-shadow:  0px 0px 40px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 40px 40px rgba(0, 0, 0, 0.1);
 }
 
-.description h3, .description p{
-    
+.description h3,
+.description p {
+
     color: var(--primary-color);
 }
 
 
-.image-container:hover .description{
+.image-container:hover .description {
     opacity: 1;
     transition: 0.3s ease-in;
     background-color: rgba(0, 0, 0, 0.9);
-    box-shadow:  0px 0px 40px 40px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 40px 40px rgba(0, 0, 0, 0.9);
 }
 
 /* ------------------ historia ----------------------- */
@@ -532,36 +565,38 @@ input[type="checkbox"]:checked {
 
 .historia-div {
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
     text-align: justify;
     max-width: 1140px;
 
 }
+
 .historia-h2 {
     padding-top: 20px;
 }
 
-.historia-p{
+.historia-p {
     margin-top: 20px;
 }
 
 /* ------------------ discografia ----------------------- */
-#Discografía{
+#Discografía {
     background-color: #a59f9f;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
-    align-content:center;
+    align-content: center;
     padding: 150px 0;
 }
 
-#Discografía h2{
+#Discografía h2 {
     max-width: 1140px;
     width: 90%;
     margin: 0 auto;
-    
+
 }
-.album-img{
+
+.album-img {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -569,32 +604,33 @@ input[type="checkbox"]:checked {
     align-items: center;
     overflow: hidden;
     width: 100%;
-    box-shadow: 0px 15px 25px 
-    rgba(0, 0, 0, 0.63);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.63);
     border-radius: 20px;
-    cursor:pointer;
+    cursor: pointer;
     transition: 1s;
     position: relative;
 }
 
-.album-img img{
+.album-img img {
     width: 100%;
     display: block;
     border-radius: 20px;
     object-fit: cover;
     height: 100%;
 }
-.album-img:hover{
+
+.album-img:hover {
     transform: scale(1.05);
     z-index: 1;
 }
-.info-disco{
+
+.info-disco {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     position: absolute;
-    background: rgba(67,63,63, 0.90);
+    background: rgba(67, 63, 63, 0.90);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -602,63 +638,65 @@ input[type="checkbox"]:checked {
     opacity: 0;
     transition: 0.6s;
 }
-.info-disco:hover{
+
+.info-disco:hover {
     opacity: 1;
 }
-.info-disco h3{
+
+.info-disco h3 {
     font-weight: bold;
     font-size: 25px;
     color: white;
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
 
-.info-disco p{
+.info-disco p {
     font-size: 18px;
     color: white;
 }
-.info-disco p span{
+
+.info-disco p span {
     display: block;
     font-size: 18px;
     font-weight: bolder;
     color: white;
 }
 
-.sec-discos{
+.sec-discos {
     width: 90%;
     max-width: 1140px;
-    margin:40px auto; 
+    margin: 40px auto;
     display: grid;
-    gap:40px;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 /* ----------------------------------------- */
 
-#masescuchadas{
-background-color: var(--cancionesmasescuchadas-bg);
-padding: 150px 0;
-display: flex;
-justify-content: center;
-align-items: center;
+#masescuchadas {
+    background-color: var(--cancionesmasescuchadas-bg);
+    padding: 150px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#masescuchadas h2{
+#masescuchadas h2 {
     margin-bottom: 40px;
     color: white;
 }
 
-.ventanaescucha{
+.ventanaescucha {
     display: flex;
-flex-direction: column;
-justify-content: center;
-
-margin-left: 40px;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin-left: 40px;
     margin-right: 40px;
     max-width: 1140px
-
 }
 
-.contenedor-botones{
+.contenedor-botones {
     overflow-y: scroll;
     height: 500px;
 }
@@ -666,22 +704,22 @@ margin-left: 40px;
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #767676; 
-    border-radius: 14px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #949494; 
-  }
+}
 
-.botonesreproductor{
+/* Track */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #767676;
+    border-radius: 14px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #949494;
+}
+
+.botonesreproductor {
     background-image: url('../img/play.png');
     background-position: right 30px center;
     background-repeat: no-repeat;
@@ -698,7 +736,7 @@ margin-left: 40px;
 }
 
 
-.textoBoton{
+.textoBoton {
     width: 10px;
     text-align: center;
     color: var(--cancionesmasescuchadas-button-color);
@@ -706,34 +744,34 @@ margin-left: 40px;
     margin: 0 35px 0 35px;
 }
 
-.portadaAlbum{
+.portadaAlbum {
     width: 72px;
     height: auto;
 }
 
-.textoBotonCancion{
+.textoBotonCancion {
     padding-left: 25px;
     text-align: left;
     color: var(--cancionesmasescuchadas-button-color);
     font-weight: 500;
     margin: 0;
- }
+}
 
 
 
 /*------------ Inicio de carrusel Tienda-------------*/
 
-#Tienda{
+#Tienda {
     background-color: #f9f9f9;
     padding: 150px 0;
 
 }
 
-#Tienda h2{
+#Tienda h2 {
     font-size: 2.3rem;
-   }
+}
 
-.card{
+.card {
     width: 16rem;
     margin-bottom: 15px;
 }
@@ -742,7 +780,7 @@ margin-left: 40px;
     margin: 55px 0 !important;
 }
 
-.card-img-top{
+.card-img-top {
     height: 260px;
     width: 280px;
     justify-content: center;
@@ -750,8 +788,8 @@ margin-left: 40px;
     border-bottom: 1px solid #b8b6b6;
 }
 
-.container{
-        /* --bs-gutter-x: 1.5rem; */
+.container {
+    /* --bs-gutter-x: 1.5rem; */
     /* --bs-gutter-y: 0; */
     width: 100%;
     /* padding-right: calc(var(--bs-gutter-x) * .5); */
@@ -761,82 +799,87 @@ margin-left: 40px;
     
     max-width: 1140px !important;
     padding: 0 !important;
+    display: flex !important;
+    justify-content: center!important;
 }
 
-.row{
+.row {
     margin: 0 !important;
-    width: 100%;
+    width: 90%;
     display: flex !important;
     justify-content: space-evenly !important;
-    
+
 }
 
-.carousel-item.active{
- display: flex !important;
- justify-content: center !important;
+.carousel-item.active {
+    display: flex !important;
+    justify-content: center !important;
 }
 
-.col-md-4{
+.col-md-4 {
     display: flex !important;
     width: auto !important;
 }
 
-.col-md-12{
+.col-md-12 {
     padding: 0 !important;
 }
 
-button span{
+button span {
     background-color: #a59f9f;
     border-radius: 15%;
-    }
+}
 
 /*---------------Fin de la tieda---------------*/
 
-ul{
+ul {
     list-style: none;
 }
 
-footer{
+footer {
     flex-wrap: wrap;
     padding: 7rem 0;
     z-index: 1;
 }
 
-.footcontainer{
- display: flex;
- 
- justify-content: center;
- align-items: flex-start;
- max-width: 1480px;
- margin-left: 40px;
+.footcontainer {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1480px;
+    margin-left: 40px;
     margin-right: 40px;
-  
-    
-    
+
+
+
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
     width: auto !important;
 }
 
-#logo-footer{
+#logo-footer {
     width: auto;
     height: 302px;
 }
 
-.footcontainer ul{
-margin-left: 80px;
-
+.footcontainer ul {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
 }
 
-.footcontainer ul li{
-    margin-bottom: 10px;
-    line-height: 50px;
+.footcontainer ul li {
+    
+    
     cursor: pointer;
 }
 
-#copyr{
-    
+#copyr {
+
     display: flex;
     justify-content: flex-end;
     max-width: 1480px;
@@ -845,3 +888,110 @@ margin-left: 80px;
     margin-right: 40px;
     text-align: right;
 }
+
+/* para compu */
+@media only screen and (max-width: 1700px) {
+
+    .nav-container {
+        margin: 0 40px;
+    }
+
+    .contenido-principal-img {
+        margin-left: 40px;
+    }
+
+}
+
+/* para celu */
+@media only screen and (max-width: 600px) {
+.menu{
+    display: none;
+}
+
+.footcontainer{
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 150px;
+}
+
+.botonesreproductor {
+    background-image: url('../img/play.png');
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    padding: 15px 50px 15px 0;
+    background-color: var(--cancionesmasescuchadas-buttoncontainer);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    margin-bottom: 15px;
+    border-radius: 7.22px;
+}
+
+
+.textoBoton {
+    width: 2px;
+    text-align: center;
+    color: var(--cancionesmasescuchadas-button-color);
+    font-weight: 500;
+    margin: 0 25px;
+    font-size: 12px;
+}
+
+.portadaAlbum {
+    width: 55px;
+    height: auto;
+}
+
+.textoBotonCancion {
+    padding-left: 15px;
+    text-align: left;
+    color: var(--cancionesmasescuchadas-button-color);
+    font-weight: 500;
+    margin: 0;
+    font-size: 12px;
+}
+
+.ventanaescucha {
+    margin: auto;
+    width: 95%;
+    
+}
+
+.contenido-principal-div{
+    display: grid;
+    row-gap: 15px;
+}
+
+.contenido-principal-img{
+    grid-row: 2;
+    width: 100vw;
+}
+
+.gallery{
+    grid-row: 1;
+    width: 100vw;
+}
+
+.image-container{
+    height: 250px !important; 
+}
+
+.image{
+    height: 100%;
+}
+
+}
+/* para tablet */
+@media only screen and (min-width: 768px) {
+    
+}
+
+/* para notebook/pc */
+@media only screen and (min-width: 992px) {
+    
+    }
