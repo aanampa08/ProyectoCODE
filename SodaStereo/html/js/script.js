@@ -72,7 +72,6 @@ function mostrar_registro(){
     inputApellido.className="info-reg";
 
 
-
     let inputEmail=document.createElement("input");
     inputEmail.type="email";
     inputEmail.name="nuevo-email";
@@ -112,16 +111,21 @@ function mostrar_registro(){
     
     label.append(inputCheck);
 
+
+
     let divBtnReg= document.createElement("div");
     divBtnReg.className="btn-reg";
-
+/////-----------------------------------------------------------------------------
     let inputRegistro= document.createElement("input");
+    let ancla= document.createElement("a");
+    ancla.setAttribute("href","javascript:mostrar_bienvenida()");
     inputRegistro.type="submit";
     inputRegistro.value="Registrarse";
     inputRegistro.className="btn-general";
+    ancla.appendChild(inputRegistro)
 
-    divBtnReg.append(inputRegistro);
-
+    divBtnReg.append(ancla);
+//////-----------------------------------------------------------------------------
     //agregamos el contenido al div
     divSec.append(divCerrar);
     divSec.append(h3);
@@ -141,9 +145,45 @@ function mostrar_registro(){
     
 }
 
+
+
 function cerrar_registro(){
     document.getElementById("sectionRegistro").innerHTML="";
     let aRegistrar=document.getElementById("aRegistrar");
     aRegistrar.classList.remove("not-active");
 
 }
+
+
+//---------------------------------------------------------------------------
+function mostrar_bienvenida(){
+
+    const containerOverlay=document.querySelector(".overlay")
+    
+    let divRegistro=document.getElementById("divRegistro");
+     divRegistro.remove();
+    const bienvenida=document.createElement("div")
+    bienvenida.setAttribute("id" , "containerBienvenida")
+    bienvenida.setAttribute("class","sec-sesion sec-registro");
+    
+
+    let divCerrar= document.createElement("div");
+    let aImg= document.createElement("a");
+    aImg.setAttribute("href","javascript:cerrar_registro()");
+    let img= document.createElement("img");
+    img.id="cerrar";
+    img.src="./img/cerca.png";
+    aImg.append(img);
+
+    divCerrar.append(aImg);
+    divCerrar.appendChild(aImg)
+    bienvenida.appendChild(divCerrar)
+    
+    let h3= document.createElement("h3");
+    h3.innerText="👋 ¡Bienvenido tu registro se ha completado con éxito! 😎";
+    bienvenida.appendChild(h3)
+
+    containerOverlay.appendChild(bienvenida);
+    
+}
+
