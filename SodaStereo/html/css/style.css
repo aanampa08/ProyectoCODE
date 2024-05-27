@@ -47,7 +47,7 @@
 body {
     padding-top: 6rem;
     background-color: var(--bg-color);
-
+    
 }
 
 header,
@@ -63,12 +63,31 @@ footer {
 
 }
 
+footer ul li a{
+    
+    color: var(--bg-color);
+    text-decoration: none;
+
+}
+
+footer ul li a:hover {
+    color: var(--third-color);
+
+}
+
 header {
     position: fixed;
     top: 0;
     z-index: 3;
 }
 
+#menu #menuHamburguesa {
+    display: none;
+}
+
+.invisible{
+    display: none;
+}
 
 .logo-header {
     width: 64px;
@@ -85,7 +104,13 @@ header {
     position: relative;
 }
 
-.menu{
+.login{
+    display: block;
+    position: fixed;
+    z-index: 3;
+}
+
+#menu{
     display: flex;
 }
 .nav-container ul {
@@ -109,8 +134,12 @@ header {
     color: var(--bg-color);
     text-decoration: none;
 }
+.nav-container ul li a:hover {
+    color: var(--third-color);
 
-.login-button {
+}
+
+#login-button {
     width: 40px;
     height: 40px;
     border-radius: 5.26px;
@@ -132,22 +161,27 @@ header {
 
 /* -----------------LOGIN--------------------------- */
 
-.nav-container .login-button section#inicio-sesion {
+.nav-container #login-button section#inicio-sesion {
     visibility: hidden;
     cursor: default;
 }
 
-.nav-container .login-button:hover section#inicio-sesion {
+.nav-container #login-button:hover section#inicio-sesion {
     visibility: visible;
     cursor: default;
 }
 
-.nav-container .login-button section#inicio-sesion:hover .sec-sesion {
+.nav-container #login-button section#inicio-sesion:hover .sec-sesion {
     visibility: visible;
     cursor: default;
 }
 
-.login-button #inicio-sesion {
+#inicio-sesion{
+    display: flex;
+    justify-content: center;
+}
+
+#login-button #inicio-sesion {
     right: 0;
     position: absolute;
     top: 3vh;
@@ -155,10 +189,11 @@ header {
     padding: 35px;
 }
 
-.login-button #inicio-sesion .sec-sesion {
+#login-button #inicio-sesion .sec-sesion {
     position: absolute;
     top: 6vh;
     right: 0;
+    
 }
 
 .sec-sesion {
@@ -169,6 +204,7 @@ header {
     display: flex;
     align-items: left;
     flex-direction: column;
+    position: relative;
 }
 
 .sec-sesion h3 {
@@ -186,9 +222,12 @@ header {
 }
 
 #cerrar {
+    
     position: absolute;
-    margin-left: 375px;
-    width: 2%;
+    width: 25px;
+    right: 30px;
+    top: 30px;
+    display: block;
 
 }
 
@@ -209,6 +248,13 @@ header {
     cursor: default;
 }
 
+.cerrarLogin{
+    position: absolute;
+    width: 25px;
+    right: 30px;
+    top: 30px;
+    display: block;
+}
 
 .sec-registro {
     width: 450px;
@@ -396,6 +442,7 @@ input[type="checkbox"]:not(:disabled):hover {
     color: var(--bg-color);
     background-color: var(--buttons-login-extra);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
+    position: relative;
 }
 
 .btn-sesion:hover {
@@ -435,7 +482,7 @@ input[type="checkbox"]:not(:disabled):hover {
     margin: 0 auto;
     width: 100%;
 
-    text-align: justify;
+    text-align: left;
     max-width: 1700px;
     display: flex;
     flex-direction: row;
@@ -458,6 +505,11 @@ input[type="checkbox"]:not(:disabled):hover {
     font-weight: bold;
 }
 
+.btn-banner:hover{
+    background-color: rgb(250, 219, 80);
+    transition: 0.5s;
+}
+
 .contenido-principal-logo {
     width: 250px;
 }
@@ -466,7 +518,7 @@ input[type="checkbox"]:not(:disabled):hover {
     color: var(--primary-color);
     width: 100%;
 
-    text-align: justify;
+    text-align: left;
 }
 
 .contenido-principal-fotos {
@@ -566,7 +618,7 @@ input[type="checkbox"]:not(:disabled):hover {
 .historia-div {
     margin: 0 auto;
     width: 90%;
-    text-align: justify;
+    text-align: left;
     max-width: 1140px;
 
 }
@@ -593,6 +645,7 @@ input[type="checkbox"]:not(:disabled):hover {
     max-width: 1140px;
     width: 90%;
     margin: 0 auto;
+    
 
 }
 
@@ -735,6 +788,15 @@ input[type="checkbox"]:not(:disabled):hover {
     border-radius: 7.22px;
 }
 
+.ventanaescucha a{
+    text-decoration: none;
+    
+}
+
+.ventanaescucha a:hover .botonesreproductor{
+    transition: 0.5s;
+    background-color: #555555;
+}
 
 .textoBoton {
     width: 10px;
@@ -774,6 +836,7 @@ input[type="checkbox"]:not(:disabled):hover {
 .card {
     width: 16rem;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .carousel {
@@ -872,11 +935,7 @@ footer {
     row-gap: 45px;
 }
 
-.footcontainer ul li {
-    
-    
-    cursor: pointer;
-}
+
 
 #copyr {
 
@@ -890,7 +949,7 @@ footer {
 }
 
 /* para compu */
-@media only screen and (max-width: 1700px) {
+@media only screen and (max-width: 1700px) and (min-width: 608px){
 
     .nav-container {
         margin: 0 40px;
@@ -903,17 +962,195 @@ footer {
 }
 
 /* para celu */
-@media only screen and (max-width: 600px) {
-.menu{
-    display: none;
+@media only screen and (max-width: 608px) {
+
+
+.nav-container {
+    max-width: 1700px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
 }
+
+.logo-header{
+    z-index: 1;
+}
+
+#menu{
+    display: flex;
+    z-index: 0;
+    top: 0;
+    background-color: black;
+    visibility: hidden;
+    flex-direction: column;
+    width: 100vw;
+    position: absolute;
+    height: 100vh;
+    margin: 0;
+    padding: 20px 25px;
+    row-gap: 100px;
+}
+.nav-container ul {
+    width: 100vw;
+    
+    list-style: none;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 70px;
+    padding: 0;
+    
+}
+
+.nav-container ul li {
+    text-align: left;
+}
+
+
+.nav-container ul li a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+#login-button {
+    width: 100%;
+    height: auto;
+    border-radius: 5.26px;
+    color: var(--bg-color);
+    font-weight: 600;
+    padding: 15px 0;
+    background-image: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-color: #5C5C5C;
+    border: 2px solid white;
+    flex-shrink: 0;
+    cursor: default;
+}
+
+#login-button #inicio-sesion {
+    right: 0;
+    position: absolute;
+    top: 3vh;
+    width: 100%;
+    padding: 0;
+    
+}
+
+#login-button #inicio-sesion .sec-sesion {
+    position: absolute;
+    top: 6vh;
+    right: 0;
+    
+}
+
+.sec-sesion {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    padding: 70px 25px;
+    background-color: var(--login-bg);
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.cerrarLogin{
+    position: absolute;
+    width: 25px;
+    right: 30px;
+    top: 30px;
+    display: block;
+}
+
+#menu #menuHamburguesa {
+    visibility: visible;
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    background-image: url('../img/menu.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-color: transparent;
+   border: none;
+    flex-shrink: 0;
+    cursor: default;
+    position: absolute;
+    z-index: 2;
+    align-self: flex-start;
+    display: block;
+}
+
+
+.invisible{
+    display: block;
+    margin-bottom: 75px;
+}
+
+
+.logo-header{
+ width: 50px;
+}
+
+.nav-container #login-button:hover section#inicio-sesion {
+    visibility: hidden;
+    cursor: default;
+}
+
+.nav-container #login-button section#inicio-sesion:hover .sec-sesion {
+    visibility: hidden;
+    cursor: default;
+}
+
+body {
+    padding-top: 5rem;
+    background-color: var(--bg-color);
+
+}
+
+footer{
+    padding: 4rem 0 2rem 0;
+}
+
+
 
 .footcontainer{
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 150px;
+    row-gap: 120px;
+}
+
+#logo-footer {
+    width: auto;
+    height: 200px;
+}
+
+.footcontainer ul {
+    margin-left: 0;
+    row-gap: 45px;
+   
+}
+
+
+#copyr {
+
+    display: flex;
+    justify-content: center;
+    max-width: 1480px;
+    margin-left: 0;
+    margin-top: 80px;
+    font-size: 14px;
+    margin-right: 0;
+    text-align: right;
 }
 
 .botonesreproductor {
@@ -958,40 +1195,128 @@ footer {
 
 .ventanaescucha {
     margin: auto;
-    width: 95%;
+    width: 90%;
     
 }
 
 .contenido-principal-div{
-    display: grid;
     row-gap: 15px;
+    width: 100vw;
+    flex-direction: column;
 }
 
 .contenido-principal-img{
-    grid-row: 2;
+    order: 2;
+    margin: 0;
+    row-gap: 30px;
+}
+
+
+.contenido-principal-logo {
+    width: 180px;
+    margin: 20px 10px;
+}
+
+.contenido-principal-p {
     width: 100vw;
+
+}
+.contenido-principal-p2 {
+    color: var(--primary-color);
+    width: 100vw;
+    font-size: 15px;
+    text-align: left;
+    font-size: 15px;
+    padding: 0 10px;
+}
+
+.btn-banner-container{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.btn-banner{
+    width: 95%;
 }
 
 .gallery{
-    grid-row: 1;
+    order: 1;
     width: 100vw;
 }
 
 .image-container{
-    height: 250px !important; 
+    height: 350px !important; 
 }
 
 .image{
     height: 100%;
 }
 
-}
-/* para tablet */
-@media only screen and (min-width: 768px) {
-    
+::-webkit-scrollbar {
+    width: 5px;
 }
 
-/* para notebook/pc */
-@media only screen and (min-width: 992px) {
-    
+.sec-discos {
+    row-gap: 25px;
+    column-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+}
+
+.info-disco h3 {
+    font-size: 16px;
+ 
+    margin: 15px 0;
+}
+
+.info-disco p {
+    font-size: 12px;
+  
+}
+
+.info-disco p span {
+
+    font-size: 12px;
+}
+
+.card {
+    width: 6rem;
+    margin-bottom: 15px;
+    height: 220px !important;
+    padding: 0px !important;
+}
+
+.card-img, .card-img-top {
+    height: 100px !important;
+}
+
+.col-md-4{
+    padding: 0px !important;
+}
+
+.card-title{
+    font-size: 13px !important;
+    font-weight: 700;
+}
+
+.card-text{
+    font-size: 11px !important;
+}
+
+
+.login{
+    display: block;
+    position: fixed;
+    z-index: 3;
+}
+
+}
+
+/*tablet, notebook*/
+@media only screen and (min-width: 608px) and (max-width: 1120px) {
+    .image-container{
+        height: 500px !important; 
+    }
     }

@@ -1,7 +1,3 @@
-AOS.init({
-  duration: 1200,
-})
-
 const vecPaises= new Array(
     "Argentina"
     ,"Bolivia"
@@ -27,13 +23,15 @@ const vecPaises= new Array(
 );
 
 function mostrar_registro(){
+
+    cerrar_login();
     let aRegistrar=document.getElementById("aRegistrar");
     aRegistrar.classList.add("not-active");
     let sectionRegistro= document.getElementById("sectionRegistro");
     sectionRegistro.style.display="flex";
 
     //CREAMOS CONTENIDO
-    let divContenedor= document.createElement("div");
+    let divContenedor= document.createElement("form");
     divContenedor.className="overlay";
     let divSec= document.createElement("div");
     divSec.id="divRegistro";
@@ -45,7 +43,7 @@ function mostrar_registro(){
 
     let img= document.createElement("img");
     img.id="cerrar";
-    img.src="./img/cerca.png";
+    img.src="./img/close.png";
     aImg.append(img);
 
     divCerrar.append(aImg);
@@ -62,7 +60,7 @@ function mostrar_registro(){
     inputNombre.id="nombre"
     inputNombre.placeholder="Nombre";
     inputNombre.className="info-reg";
-    inputNombre.required;
+    inputNombre.required = true;
     
     let inputApellido=document.createElement("input");
     inputApellido.type="text";
@@ -70,7 +68,7 @@ function mostrar_registro(){
     inputApellido.id="apellido"
     inputApellido.placeholder="Apellido";
     inputApellido.className="info-reg";
-
+    
 
     let inputEmail=document.createElement("input");
     inputEmail.type="email";
@@ -102,12 +100,15 @@ function mostrar_registro(){
         select.append(option);
     }
 
-    let label=document.createElement("label");
-    label.className="estilos-check";
-    label.innerText="Deseo recibir novedades al correo electrónico";
-
     let inputCheck=document.createElement("input");
     inputCheck.type="checkbox";
+    
+    let label=document.createElement("label");
+    label.innerText="Deseo recibir novedades al correo electrónico";
+    label.className="estilos-check";
+    
+
+    
     
     label.append(inputCheck);
 
@@ -117,14 +118,13 @@ function mostrar_registro(){
     divBtnReg.className="btn-reg";
 /////-----------------------------------------------------------------------------
     let inputRegistro= document.createElement("input");
-    let ancla= document.createElement("a");
-    ancla.setAttribute("href","javascript:mostrar_bienvenida()");
+    
     inputRegistro.type="submit";
     inputRegistro.value="Registrarse";
     inputRegistro.className="btn-general";
-    ancla.appendChild(inputRegistro)
+    divBtnReg.appendChild(inputRegistro)
 
-    divBtnReg.append(ancla);
+    //inputRegistro.addEventListener("submit", validate);
 //////-----------------------------------------------------------------------------
     //agregamos el contenido al div
     divSec.append(divCerrar);
@@ -172,7 +172,7 @@ function mostrar_bienvenida(){
     aImg.setAttribute("href","javascript:cerrar_registro()");
     let img= document.createElement("img");
     img.id="cerrar";
-    img.src="./img/cerca.png";
+    img.src="./img/close.png";
     aImg.append(img);
 
     divCerrar.append(aImg);
@@ -187,3 +187,112 @@ function mostrar_bienvenida(){
     
 }
 
+let hamburguesa = document.getElementById("menuHamburguesa");
+let loginBTN = document.getElementById("login-button");
+const loginTexto = document.createTextNode("Iniciar sesión");
+let lista = [];
+let menuActivo = false;
+
+
+  let  tamañoVentana = window.innerWidth;
+    if(tamañoVentana <= 608){
+        loginBTN.appendChild(loginTexto);
+        
+        loginBTN.addEventListener("click", abrirLogin);
+        hamburguesa.addEventListener("click",function() {
+            
+            if(menuActivo){
+                hamburguesa.style.backgroundImage = "url('../img/menu.png')";
+                document.getElementById("menu").style.visibility = "hidden"; 
+                cerrar_login();
+                document.body.style.overflow = 'auto';
+
+            } else {
+                hamburguesa.style.backgroundImage = "url('../img/close.png')";
+                document.getElementById("menu").style.visibility = "visible"
+                
+                document.body.style.overflow = 'hidden';
+            }
+        
+            menuActivo = !menuActivo;
+        
+            
+          });
+
+        
+           
+
+          for(let i = 0; i < 4; i++){
+            lista[i] = document.getElementById(`lista${i}`);
+            lista[i].addEventListener("click",function(){
+                document.getElementById("menu").style.visibility = "hidden"; 
+                hamburguesa.style.backgroundImage = "url('../img/menu.png')";
+                menuActivo = false;
+                cerrar_login();
+                document.body.style.overflow = 'auto';
+              });
+            }
+          
+          
+        } else {
+            document.getElementById("menu").style.visibility = "visible"; 
+        }
+
+
+
+
+
+        function abrirLogin(){
+            
+            let seccionLogin = document.getElementById("sectionLogin");
+            seccionLogin.innerHTML = `
+            <div class="overlay">
+            <section id="inicio-sesion">
+            <form class="sec-sesion">
+              <a href="javascript:cerrar_login()" id="cerrarLogin"><img src="./img/close.png" alt="Cerrar" class="cerrarLogin"></a>
+                <h3>Iniciar sesión</h3>
+                
+                <input type="email" name="email" id="email" placeholder="Email" class="sec-input">
+                <input type="password" name="clave" id="clave" placeholder="Contraseña" class="sec-input">
+                <div class="sec-guardado">
+                    <label class="estilos-check">
+                        <input type="checkbox">
+                        Recuerda
+                    </label>
+                    <input type="submit" id="recordar-contraseña" value="¿No recordas tu contraseña?">
+                </div>
+                <input type="submit" id="iniciar-sesion" value="Iniciar sesión" class="btn-general">
+                <div class="registrate">
+                    <label for="registro">
+                      ¿No tenes cuenta?
+                      
+                      
+                      <a href="javascript:mostrar_registro()" id="aRegistrar">Registrarse</a>
+                      
+                    </label>
+                    
+                </div>
+                <fieldset>
+                    <legend>o inicia con</legend>
+                    <div class="btns-sesion">
+                        <!-- poner emoji dentro del boton -->
+                        <input type="submit" value="Cuenta de Google" class="btn-sesion">
+                        <input type="submit" value="Cuenta de Facebook" class="btn-sesion">
+                    </div>
+                </fieldset>
+            </form>
+            </section>
+            </div>`;
+            
+            
+            }
+            
+            
+            
+            function cerrar_login(){
+                let seccionLogin = document.getElementById("sectionLogin");
+                seccionLogin.innerHTML = ``;
+                
+            }
+
+            
