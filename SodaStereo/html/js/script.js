@@ -31,8 +31,9 @@ function mostrar_registro() {
     sectionRegistro.style.display = "flex";
 
     //CREAMOS CONTENIDO
-    let divContenedor = document.createElement("form");
-    divContenedor.className = "overlay";
+    let form_registro = document.createElement("form");
+    form_registro.id="form-registro";
+    form_registro.className = "overlay";
     let divSec = document.createElement("div");
     divSec.id = "divRegistro";
     divSec.setAttribute("class", "sec-sesion sec-registro");
@@ -119,7 +120,7 @@ function mostrar_registro() {
 
 
     ////-----------------------------------------------------------------------------
-    let aviso=document.createElement("div");
+    
     /////-----------------------------------------------------------------------------
     let inputRegistro = document.createElement("input");
 
@@ -127,68 +128,64 @@ function mostrar_registro() {
     inputRegistro.value = "Registrarse";
     inputRegistro.className = "btn-general";
     
-    divBtnReg.appendChild(inputRegistro)
-
-    //inputRegistro.addEventListener("submit", validate);
+    divBtnReg.append(inputRegistro)
+    let avisoNombre=document.createElement("div");
+    let avisoApellido=document.createElement("div");
     //////-----------------------------------------------------------------------------
     //agregamos el contenido al div
     divSec.append(divCerrar);
     divSec.append(h3);
     divSec.append(divInfoUser);
     divSec.append(inputNombre);
+    divSec.append(avisoNombre);
     divSec.append(inputApellido);
+    divSec.append(avisoApellido);
     divSec.append(inputEmail);
     divSec.append(inputContra);
     divSec.append(select);
     divSec.append(label);
-    divSec.append(aviso);
+    
+    
     divSec.append(divBtnReg);
 
     //agregamos todo el contenido del div al section
 
-    divContenedor.append(divSec);
-    sectionRegistro.append(divContenedor);
+    form_registro.append(divSec);
+    sectionRegistro.append(form_registro);
 
     //validacion de nombre y apellido
-    inputNombre.addEventListener("change",(e)=>{
-        resultado=validarTexto(e.target.value);
-        informarError(aviso,resultado,inputNombre,inputRegistro);
+    inputNombre.addEventListener("keypress",(e)=>{
+        if(validarTexto(e)){
+            avisoNombre.style.visibility="hidden";
+        }else{
+            avisoNombre.style.visibility="visible";
+            avisoNombre.style.color="#FFED00";
+            avisoNombre.innerText=(`'${inputNombre.placeholder}' admite unicamente letras.`);
+        }
     });
-    inputApellido.addEventListener("change",(e)=>{
-        resultado=validarTexto(e.target.value);
-        informarError(aviso,resultado,inputApellido,inputRegistro);
+    inputApellido.addEventListener("keypress",(e)=>{
+        if(validarTexto(e)){
+            avisoApellido.style.visibility="hidden";
+        }else{
+            avisoApellido.style.visibility="visible";
+            avisoApellido.style.color="#FFED00";
+            avisoApellido.innerText=(`'${inputApellido.placeholder}' admite unicamente letras.`);
+        }
     });
     
     inputRegistro.addEventListener("click",()=>{
         mostrar_bienvenida(inputNombre.value);
     });
-
+    
 }
 
-
-function informarError(aviso,resultado,tag,inputRegistro){
-    if(resultado==true){
-        inputRegistro.classList.add("btn-general");
-        inputRegistro.classList.remove("btnDisabled");
-        tag.style.color="white";
-        aviso.style.visibility="hidden";
-    }
-    else{
-        inputRegistro.disabled=true;
-        inputRegistro.classList.add("btnDisabled");
-        inputRegistro.classList.remove("btn-general");
-        tag.style.color="#FFED00";
-        aviso.style.visibility="visible";
-        aviso.style.color="#FFED00";
-        aviso.innerText=(`'${tag.placeholder}' admite unicamente letras.`);
-    }
-}
-
-function validarTexto(texto){
-    resultado=false;
+function validarTexto(event){
+    resultado=true;
+    console.log(event.key);
     var patron=/^[a-zA-Z\s]*$/;
-    if(!texto.search(patron)){
-        resultado=true;
+    if(!patron.test(event.key)){
+        event.preventDefault();
+        resultado=false;
     }
     return resultado;
 }
@@ -212,9 +209,10 @@ function mostrar_bienvenida(user) {
 
     let divRegistro = document.getElementById("divRegistro");
     divRegistro.remove();
-    const bienvenida = document.createElement("div")
-    bienvenida.setAttribute("id", "containerBienvenida")
-    bienvenida.setAttribute("class", "sec-sesion sec-registro");
+    const bienvenida = document.createElement("div");
+    bienvenida.setAttribute("id", "containerBienvenida");
+
+    bienvenida.setAttribute("class", "confirmRegistroPop");
 
 
     let divCerrar = document.createElement("div");
@@ -226,14 +224,21 @@ function mostrar_bienvenida(user) {
     aImg.append(img);
 
     divCerrar.append(aImg);
-    divCerrar.appendChild(aImg)
-    bienvenida.appendChild(divCerrar)
+    divCerrar.append(aImg);
+    bienvenida.append(divCerrar);
 
-    let h3 = document.createElement("h3");
-    h3.innerText = `👋 ¡Bienvenido ${user} tu registro se ha completado con éxito! 😎`;
-    bienvenida.appendChild(h3)
-
-    containerOverlay.appendChild(bienvenida);
+    let h4 = document.createElement("h4");
+    h4.innerText = `¡Felicidades ${user} !`;
+    let divCheck=document.createElement("div");
+    let imgCheck=document.createElement("img");
+    imgCheck.src="./img/check.png";
+    divCheck.append(imgCheck);
+    let p=document.createElement("p");
+    p.innerText="Tu registro se ha completado con éxito!";
+    bienvenida.append(h4);
+    bienvenida.append(divCheck);
+    bienvenida.append(p);
+    containerOverlay.append(bienvenida);
 
 }
 
@@ -246,7 +251,7 @@ let menuActivo = false;
 
 let tamañoVentana = window.innerWidth;
 if (tamañoVentana <= 608) {
-    loginBTN.appendChild(loginTexto);
+    loginBTN.append(loginTexto);
 
     loginBTN.addEventListener("click", abrirLogin);
     hamburguesa.addEventListener("click", function () {

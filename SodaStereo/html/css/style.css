@@ -319,17 +319,7 @@ header {
     margin: 10px 0 10px 0;
 }
 
-.btnDisabled{
-    height: 40px;
-    border-radius: 10px;
-    margin: 20px 0 10px 0;
-    border: none;
-    background-color: var(--login-bg);
-    color: #fff;
-    font-weight: bolder;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
-    margin: 10px 0 10px 0;
-}
+
 
 .btn-general:hover {
     background-color: #454343;
@@ -339,6 +329,8 @@ header {
 .btn-general:active {
     background-color: #000000;
 }
+
+
 
 .estilos-check {
 
@@ -485,6 +477,39 @@ input[type="checkbox"]:not(:disabled):hover {
 .btn-reg input {
     width: 100%;
 }
+.confirmRegistroPop{
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 250px;
+    border-radius: 20px;
+    margin: auto auto;
+    padding: 20px;
+    align-content: center;
+    flex-direction: column;
+    background-color: var(--login-bg);
+}
+
+.confirmRegistroPop h4,p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:var(--bg-color);
+    margin: auto auto;
+}
+.confirmRegistroPop div img{
+    width: 50px;
+    
+}
+.confirmRegistroPop div{
+    width: 50px;
+    height: 50px;
+    padding-bottom:20px ;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+}
+
 
 /* ------------------ banner ----------------------- */
 #Principal {
