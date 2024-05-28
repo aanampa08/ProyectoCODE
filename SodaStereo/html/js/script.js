@@ -131,6 +131,7 @@ function mostrar_registro() {
     divBtnReg.append(inputRegistro)
     let avisoNombre=document.createElement("div");
     let avisoApellido=document.createElement("div");
+    let avisoGeneral=document.createElement("div");
     //////-----------------------------------------------------------------------------
     //agregamos el contenido al div
     divSec.append(divCerrar);
@@ -145,7 +146,7 @@ function mostrar_registro() {
     divSec.append(select);
     divSec.append(label);
     
-    
+    divSec.append(avisoGeneral);
     divSec.append(divBtnReg);
 
     //agregamos todo el contenido del div al section
@@ -174,9 +175,31 @@ function mostrar_registro() {
     });
     
     inputRegistro.addEventListener("click",()=>{
-        mostrar_bienvenida(inputNombre.value);
+        if(inputNombre.value != "" && inputEmail.value != "" && inputContra.value !=""){
+            avisoGeneral.style.visibility="hidden";
+            mostrar_bienvenida(inputNombre.value);
+        }
+        else{
+            avisoGeneral.style.visibility="visible";
+            avisoGeneral.style.color="#FFED00";
+            avisoGeneral.innerText="Por favor, evite dejar campos vacios.";
+
+        }
+        
     });
-    
+    inputRegistro.addEventListener("click",()=>{
+        if(inputNombre.value != "" && inputEmail.value != "" && inputContra.value !=""){
+            avisoGeneral.style.visibility="hidden";
+            mostrar_bienvenida(inputNombre.value);
+        }
+        else{
+            avisoGeneral.style.visibility="visible";
+            avisoGeneral.style.color="#FFED00";
+            avisoGeneral.innerText="Por favor, evite dejar campos vacios.";
+
+        }
+        
+    });
 }
 
 function validarTexto(event){
