@@ -260,6 +260,7 @@ header {
     width: 450px;
     padding: 30px 25px;
     background: var(--login-bg);
+    color: var(--bg-color);
 }
 
 .sec-registro h3 {
@@ -312,6 +313,18 @@ header {
     margin: 20px 0 10px 0;
     border: none;
     background-color: var(--login-stroke);
+    color: #fff;
+    font-weight: bolder;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
+    margin: 10px 0 10px 0;
+}
+
+.btnDisabled{
+    height: 40px;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
+    border: none;
+    background-color: var(--login-bg);
     color: #fff;
     font-weight: bolder;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
@@ -392,6 +405,7 @@ input[type="checkbox"]:not(:disabled):hover {
     height: 40px;
     border-radius: 10px;
     border: none;
+    color: var(--bg-color);
 }
 
 .info-reg::placeholder {
