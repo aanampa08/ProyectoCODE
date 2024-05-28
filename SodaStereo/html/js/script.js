@@ -158,8 +158,14 @@ function mostrar_registro() {
         resultado=validarTexto(e.target.value);
         informarError(aviso,resultado,inputApellido,inputRegistro);
     });
+    
+    inputRegistro.addEventListener("click",()=>{
+        mostrar_bienvenida(inputNombre.value);
+    });
 
 }
+
+
 function informarError(aviso,resultado,tag,inputRegistro){
     if(resultado==true){
         inputRegistro.classList.add("btn-general");
@@ -200,7 +206,7 @@ function cerrar_registro() {
 
 
 //---------------------------------------------------------------------------
-function mostrar_bienvenida() {
+function mostrar_bienvenida(user) {
 
     const containerOverlay = document.querySelector(".overlay")
 
@@ -224,7 +230,7 @@ function mostrar_bienvenida() {
     bienvenida.appendChild(divCerrar)
 
     let h3 = document.createElement("h3");
-    h3.innerText = "👋 ¡Bienvenido tu registro se ha completado con éxito! 😎";
+    h3.innerText = `👋 ¡Bienvenido ${user} tu registro se ha completado con éxito! 😎`;
     bienvenida.appendChild(h3)
 
     containerOverlay.appendChild(bienvenida);
