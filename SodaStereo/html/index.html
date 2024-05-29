@@ -30,8 +30,10 @@
           <section id="inicio-sesion">
             <form class="sec-sesion">
               <h3>Iniciar sesión</h3>
-              <input type="email" name="email" id="email" placeholder="Email" class="sec-input">
+              <input type="email" name="email" id="emailLogin" placeholder="Email" class="sec-input">
+              <div id="avisoEmailLogin"></div>
               <input type="password" name="clave" id="clave" placeholder="Contraseña" class="sec-input">
+              <div id="avisoPassLogin"></div>
               <div class="sec-guardado">
                 <label class="estilos-check">
                   <input type="checkbox">
@@ -39,6 +41,7 @@
                 </label>
                 <a href="#" id="recordar-contraseña">¿No recordas tu contraseña?</a>
               </div>
+              <div id="avisoLogin"></div>
               <input type="submit" id="iniciar-sesion" value="Iniciar sesión" class="btn-general">
               <div class="registrate">
                 <label for="registro">

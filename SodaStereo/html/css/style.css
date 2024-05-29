@@ -278,6 +278,10 @@ header {
     border: 1px solid transparent;
 }
 
+.sec-input.error{
+    border: 2px solid red;
+}
+
 .sec-input::placeholder {
     color: var(--placeholder-color);
     text-align: left;
@@ -342,7 +346,8 @@ header {
 }
 
 .sec-registro .estilos-check {
-
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     padding: 25px 0;
 }
 
@@ -358,7 +363,6 @@ input[type="checkbox"] {
     background-color: #383838;
 
 }
-
 
 
 
@@ -396,8 +400,18 @@ input[type="checkbox"]:not(:disabled):hover {
     text-indent: 15px;
     height: 40px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid transparent;
     color: var(--bg-color);
+    
+}
+
+.info-reg.error {
+    border: 2px solid red;
+    
+}
+
+input{
+    outline: none;
 }
 
 .info-reg::placeholder {
@@ -467,6 +481,7 @@ input[type="checkbox"]:not(:disabled):hover {
 }
 
 .sec-sesion legend {
+    text-align: center;
     font-size: 15px;
     color: white;
     margin: 0 auto;
@@ -490,13 +505,15 @@ input[type="checkbox"]:not(:disabled):hover {
     background-color: var(--login-bg);
 }
 
-.confirmRegistroPop h4,p{
+.confirmRegistroPop h4, .confirmRegistroPop p{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     color:var(--bg-color);
     margin: auto auto;
 }
+
+
 .confirmRegistroPop div img{
     width: 50px;
     

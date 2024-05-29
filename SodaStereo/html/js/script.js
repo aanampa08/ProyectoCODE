@@ -61,7 +61,6 @@ function mostrar_registro() {
     inputNombre.id = "nombre"
     inputNombre.placeholder = "Nombre";
     inputNombre.className = "info-reg";
-    inputNombre.required = true;
 
     let inputApellido = document.createElement("input");
     inputApellido.type = "text";
@@ -77,15 +76,13 @@ function mostrar_registro() {
     inputEmail.id = "nuevo-email"
     inputEmail.placeholder = "Email";
     inputEmail.className = "sec-input";
-    inputEmail.required= true;
 
     let inputContra = document.createElement("input");
-    inputContra.type = "text";
+    inputContra.type = "password";
     inputContra.name = "nuevo-contra";
     inputContra.id = "nuevo-contra"
     inputContra.placeholder = "Contraseña";
     inputContra.className = "sec-input";
-    inputContra.required= true;
 
     let select = document.createElement("select");
     select.name = "Paises";
@@ -125,12 +122,14 @@ function mostrar_registro() {
     let inputRegistro = document.createElement("input");
 
     inputRegistro.type = "submit";
+    inputRegistro.id = "inputRegistro";
     inputRegistro.value = "Registrarse";
     inputRegistro.className = "btn-general";
     
     divBtnReg.append(inputRegistro)
     let avisoNombre=document.createElement("div");
     let avisoApellido=document.createElement("div");
+    let avisoEmail=document.createElement("div");
     let avisoGeneral=document.createElement("div");
     //////-----------------------------------------------------------------------------
     //agregamos el contenido al div
@@ -142,6 +141,7 @@ function mostrar_registro() {
     divSec.append(inputApellido);
     divSec.append(avisoApellido);
     divSec.append(inputEmail);
+    divSec.append(avisoEmail);
     divSec.append(inputContra);
     divSec.append(select);
     divSec.append(label);
@@ -158,36 +158,45 @@ function mostrar_registro() {
     inputNombre.addEventListener("keypress",(e)=>{
         if(validarTexto(e)){
             avisoNombre.style.visibility="hidden";
+            avisoNombre.innerText="";
+            inputNombre.classList.remove("error");
+            
         }else{
+            inputNombre.classList.add("error");
             avisoNombre.style.visibility="visible";
             avisoNombre.style.color="#FFED00";
             avisoNombre.innerText=(`'${inputNombre.placeholder}' admite unicamente letras.`);
         }
     });
+    
     inputApellido.addEventListener("keypress",(e)=>{
         if(validarTexto(e)){
             avisoApellido.style.visibility="hidden";
+            avisoApellido.innerText="";
+            inputApellido.classList.remove("error");
         }else{
+            inputApellido.classList.add("error");
             avisoApellido.style.visibility="visible";
             avisoApellido.style.color="#FFED00";
             avisoApellido.innerText=(`'${inputApellido.placeholder}' admite unicamente letras.`);
         }
     });
-    
-    inputRegistro.addEventListener("click",()=>{
-        if(inputNombre.value != "" && inputEmail.value != "" && inputContra.value !=""){
-            avisoGeneral.style.visibility="hidden";
-            mostrar_bienvenida(inputNombre.value);
-        }
-        else{
-            avisoGeneral.style.visibility="visible";
-            avisoGeneral.style.color="#FFED00";
-            avisoGeneral.innerText="Por favor, evite dejar campos vacios.";
 
+    inputEmail.addEventListener("keyup",()=>{
+        if(expresiones.correo.test(inputEmail.value) || inputEmail.value == ""){
+            avisoEmail.style.visibility="hidden";
+            avisoEmail.innerText="";
+            inputEmail.classList.remove("error");
+        }else {
+            inputEmail.classList.add("error");
+            avisoEmail.style.visibility="visible";
+            avisoEmail.style.color="#FFED00";
+            avisoEmail.innerText=(`'${inputEmail.placeholder}'  necesita un "@" y un "."`);
         }
-        
     });
-    inputRegistro.addEventListener("click",()=>{
+    
+    inputRegistro.addEventListener("click",(e)=>{
+        e.preventDefault();
         if(inputNombre.value != "" && inputEmail.value != "" && inputContra.value !=""){
             avisoGeneral.style.visibility="hidden";
             mostrar_bienvenida(inputNombre.value);
@@ -196,11 +205,79 @@ function mostrar_registro() {
             avisoGeneral.style.visibility="visible";
             avisoGeneral.style.color="#FFED00";
             avisoGeneral.innerText="Por favor, evite dejar campos vacios.";
-
+            if(inputNombre.value == ""){
+                inputNombre.classList.add("error");
+            } else {
+                inputNombre.classList.remove("error");
+            }
+            if(inputApellido.value == ""){
+                inputApellido.classList.add("error");
+            } else {
+                inputApellido.classList.remove("error");
+            }
+            if(inputEmail.value == ""){
+                inputEmail.classList.add("error");
+            } else {
+                inputEmail.classList.remove("error");
+            }
+            if(inputContra.value == ""){
+                inputContra.classList.add("error");
+            } else {
+                inputContra.classList.remove("error");
+            }
         }
         
     });
 }
+
+
+const emailLogin = document.getElementById("emailLogin");
+emailLogin.addEventListener("keyup",()=>{
+    let avisoEmail = document.getElementById("avisoEmailLogin");
+    if(expresiones.correo.test(emailLogin.value) || emailLogin.value == ""){
+        avisoEmail.style.display="none";
+        avisoEmail.innerText="";
+        emailLogin.classList.remove("error");
+    }else {
+        emailLogin.classList.add("error");
+        avisoEmail.style.display="block";
+        avisoEmail.style.textAlign="left";
+        avisoEmail.style.color="#FFED00";
+        avisoEmail.innerText=(`'${emailLogin.placeholder}'  necesita un "@" y un "."`);
+    }
+});
+
+const contraLogin = document.getElementById("clave");
+
+const iniciarSesion = document.getElementById("iniciar-sesion").addEventListener("click",(e)=>{
+    e.preventDefault();
+    let avisoLogin = document.getElementById("avisoLogin");
+        if(contraLogin.value != "" && emailLogin.value){
+            avisoLogin.style.display="none";
+            IngresoLogin(emailLogin.value);
+        }
+        else{
+            avisoLogin.style.display="block";
+            avisoLogin.style.color="#FFED00";
+            avisoLogin.style.textAlign="left";
+            avisoLogin.innerText="Por favor, evite dejar campos vacios.";
+            if(contraLogin.value == ""){
+                contraLogin.classList.add("error");
+            } else {
+                contraLogin.classList.remove("error");
+            }
+            if(emailLogin.value == ""){
+                emailLogin.classList.add("error");
+            } else {
+                emailLogin.classList.remove("error");
+            }
+            
+        }
+    
+});
+
+
+
 
 function validarTexto(event){
     resultado=true;
@@ -211,6 +288,14 @@ function validarTexto(event){
         resultado=false;
     }
     return resultado;
+}
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
 
@@ -263,6 +348,30 @@ function mostrar_bienvenida(user) {
     bienvenida.append(p);
     containerOverlay.append(bienvenida);
 
+}
+
+function IngresoLogin(email) {
+    cerrar_login();
+    let seccionLoginAdentro = document.getElementById("sectionLogin");
+    seccionLoginAdentro.innerHTML = `
+            <div class="overlay">
+            <section id="inicio-sesion">
+            <div class="sec-sesion" >
+              <a href="javascript:cerrar_ingresoLogin()" id="cerrarLogin"><img src="./img/close.png" alt="Cerrar" class="cerrarLogin"></a>
+                <h4 style="padding: 25px 0; color: white">¡Bienvenid@ ${email}!</h4>
+                
+                
+            </div>
+            </section>
+            </div>`;
+
+    
+
+}
+
+function cerrar_ingresoLogin(){
+    let seccionLoginAdentro = document.getElementById("sectionLogin");
+    seccionLoginAdentro.innerHTML = ``;
 }
 
 let hamburguesa = document.getElementById("menuHamburguesa");
@@ -330,8 +439,9 @@ function abrirLogin() {
               <a href="javascript:cerrar_login()" id="cerrarLogin"><img src="./img/close.png" alt="Cerrar" class="cerrarLogin"></a>
                 <h3>Iniciar sesión</h3>
                 
-                <input type="email" name="email" id="email" placeholder="Email" class="sec-input">
-                <input type="password" name="clave" id="clave" placeholder="Contraseña" class="sec-input">
+                <input type="email" name="email" id="emailLoginP" placeholder="Email" class="sec-input">
+                <div id="avisoEmailP"></div>
+                <input type="password" name="clave" id="contraLoginP" placeholder="Contraseña" class="sec-input">
                 <div class="sec-guardado">
                     <label class="estilos-check">
                         <input type="checkbox">
@@ -339,7 +449,8 @@ function abrirLogin() {
                     </label>
                     <input type="submit" id="recordar-contraseña" value="¿No recordas tu contraseña?">
                 </div>
-                <input type="submit" id="iniciar-sesion" value="Iniciar sesión" class="btn-general">
+                <div id="avisoLoginP"></div>
+                <input type="submit" id="iniciar-sesion-pop" value="Iniciar sesión" class="btn-general">
                 <div class="registrate">
                     <label for="registro">
                       ¿No tenes cuenta?
@@ -362,7 +473,52 @@ function abrirLogin() {
             </section>
             </div>`;
 
+            const emailLoginP = document.getElementById("emailLoginP");
+emailLoginP.addEventListener("keyup",()=>{
+    let avisoEmailP = document.getElementById("avisoEmailP");
+    if(expresiones.correo.test(emailLoginP.value) || emailLoginP.value == ""){
+        avisoEmailP.style.display="none";
+        avisoEmailP.innerText="";
+        emailLoginP.classList.remove("error");
+    }else {
+        emailLoginP.classList.add("error");
+        avisoEmailP.style.display="block";
+        avisoEmailP.style.textAlign="left";
+        avisoEmailP.style.color="#FFED00";
+        avisoEmailP.innerText=(`'${emailLoginP.placeholder}' necesita un "@" y un "."`);
+    }
+});
 
+const contraLoginP = document.getElementById("contraLoginP");
+
+const iniciarSesionP = document.getElementById("iniciar-sesion-pop").addEventListener("click",(e)=>{
+    e.preventDefault();
+    let avisoLogin = document.getElementById("avisoLogin");
+        if(contraLoginP.value != "" && emailLoginP.value){
+            avisoLoginP.style.display="none";
+            IngresoLogin(emailLogin.value);
+        }
+        else{
+            avisoLoginP.style.display="block";
+            avisoLoginP.style.color="#FFED00";
+            avisoLoginP.style.textAlign="left";
+            avisoLoginP.innerText="Por favor, evite dejar campos vacios.";
+            if(contraLoginP.value == ""){
+                contraLoginP.classList.add("error");
+            } else {
+                contraLoginP.classList.remove("error");
+            }
+            if(emailLoginP.value == ""){
+                emailLoginP.classList.add("error");
+            } else {
+                emailLoginP.classList.remove("error");
+            }
+            
+        }
+    
+});
+
+           
 }
 
 
