@@ -557,11 +557,10 @@ input{
 
 /* ------------------ banner ----------------------- */
 #Principal {
-    background-color: var(--secondary-color);
+    background: linear-gradient(90deg,  var(--secondary-color), #222222);
 }
 
 .contenido-principal-div {
-    background-color: var(--secondary-color);
     margin: 0 auto;
     width: 100%;
 
