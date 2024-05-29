@@ -182,7 +182,7 @@ function mostrar_registro() {
         }
     });
 
-    inputEmail.addEventListener("keyup",()=>{
+    inputEmail.addEventListener("change",()=>{
         if(expresiones.correo.test(inputEmail.value) || inputEmail.value == ""){
             avisoEmail.style.visibility="hidden";
             avisoEmail.innerText="";
@@ -232,7 +232,7 @@ function mostrar_registro() {
 
 
 const emailLogin = document.getElementById("emailLogin");
-emailLogin.addEventListener("keyup",()=>{
+emailLogin.addEventListener("change",()=>{
     let avisoEmail = document.getElementById("avisoEmailLogin");
     if(expresiones.correo.test(emailLogin.value) || emailLogin.value == ""){
         avisoEmail.style.display="none";
@@ -462,7 +462,7 @@ function abrirLogin() {
             </div>`;
 
             const emailLoginP = document.getElementById("emailLoginP");
-emailLoginP.addEventListener("keyup",()=>{
+emailLoginP.addEventListener("change",()=>{
     let avisoEmailP = document.getElementById("avisoEmailP");
     if(expresiones.correo.test(emailLoginP.value) || emailLoginP.value == ""){
         avisoEmailP.style.display="none";
@@ -484,7 +484,7 @@ const iniciarSesionP = document.getElementById("iniciar-sesion-pop").addEventLis
     let avisoLogin = document.getElementById("avisoLogin");
         if(contraLoginP.value != "" && emailLoginP.value){
             avisoLoginP.style.display="none";
-            IngresoLogin(emailLogin.value);
+            IngresoLogin(emailLoginP.value);
         }
         else{
             avisoLoginP.style.display="block";
