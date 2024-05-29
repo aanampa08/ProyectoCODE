@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -26,8 +26,9 @@
           <li><a href="#Discografía" id="lista2">Discografía</a></li>
           <li><a href="#Tienda" id="lista3">Tienda</a></li>
         </ul>
-        <button id="login-button">
-          <section id="inicio-sesion">
+        <button id="login-button"></button>
+        <div id="loginDiv">
+        <section id="inicio-sesion">
             <form class="sec-sesion">
               <h3>Iniciar sesión</h3>
               <input type="email" name="email" id="emailLogin" placeholder="Email" class="sec-input">
@@ -44,13 +45,13 @@
               <div id="avisoLogin"></div>
               <input type="submit" id="iniciar-sesion" value="Iniciar sesión" class="btn-general">
               <div class="registrate">
-                <label for="registro">
+                <span class="registroP">
                   ¿No tenes cuenta?
 
 
-                  <a href="javascript:mostrar_registro()" id="aRegistrar">Registrarse</a>
+                  <a href="javascript:mostrar_registro()" id="aRegistrar">Registrate</a>
 
-                </label>
+                </span>
 
               </div>
               <fieldset>
@@ -63,15 +64,14 @@
               </fieldset>
             </form>
           </section>
-
-        </button>
+        </div>
       </div>
     </nav>
   </header>
   <main>
-    <section class="login" id="sectionLogin"></section>
-    <section class="registro" id="sectionRegistro"></section>
-    <section class="bienvenida" id="sectionBienvenida"></section>
+    <div class="login" id="sectionLogin"></div>
+    <div class="registro" id="sectionRegistro"></div>
+    <div class="bienvenida" id="sectionBienvenida"></div>
 
     <section id="Principal">
       <div class="contenido-principal-div" data-aos="zoom-in" data-aos-duration="1000">
@@ -85,8 +85,7 @@
               también el merchandising oficial de la banda. Únete y disfruta del universo soda.
             </p>
           </div>
-          <a href="#historia" class="btn-banner-container"><button class="btn-banner">Conoce más</button></a>
-
+          <a href="#historia" class="btn-banner">Conoce más</a>
         </div>
 
 
@@ -144,89 +143,83 @@
         <h2>Exitos</h2>
         <div class="contenedor-botones">
           <a href="https://www.youtube.com/watch?v=T_FkEw27XJ0&pp=ygUQZGUgbXVzaWNhIGxpZ2VyYQ%3D%3D"
-            target="_blank"><button class="botonesreproductor">
+            target="_blank" class="botonesreproductor">
               <p class="textoBoton">1</p>
               <img src="./img/album-animal.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 De Música Ligera - Remasterizado 2007
               </p>
-
-            </button></a>
-          <a href="https://www.youtube.com/watch?v=UPVfQKUHTSc&pp=ygUSdHJhdGFtZSBzdWF2ZW1lbnRl" target="_blank"><button
-              class="botonesreproductor">
+            </a>
+          <a href="https://www.youtube.com/watch?v=UPVfQKUHTSc&pp=ygUSdHJhdGFtZSBzdWF2ZW1lbnRl" target="_blank" class="botonesreproductor">
               <p class="textoBoton">2</p>
               <img src="./img/album-soda-stereo.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Trátame Suavemente - Remasterizado 2007
               </p>
-            </button></a>
+            </a>
           <a href="https://www.youtube.com/watch?v=ZNzYr4U7Zs8&pp=ygUWY3VhbmRvIHBhc2UgZWwgdGVtYmxvcg%3D%3D"
-            target="_blank"><button class="botonesreproductor">
+            target="_blank" class="botonesreproductor">
               <p class="textoBoton">3</p>
               <img src="./img/album-nada-personal.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Cuando Pase El Temblor - Remasterizado 2007
               </p>
-            </button></a>
-          <a href="https://www.youtube.com/watch?v=Z3L5M7GHAkw&pp=ygUScGVyc2lhbmEgYW1lcmljYW5h" target="_blank"><button
-              class="botonesreproductor">
+            </a>
+          <a href="https://www.youtube.com/watch?v=Z3L5M7GHAkw&pp=ygUScGVyc2lhbmEgYW1lcmljYW5h" target="_blank" class="botonesreproductor">
               <p class="textoBoton">4</p>
               <img src="./img/album-signos.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Persiana Americana - Remasterizado 2007
               </p>
-            </button></a>
-          <a href="https://www.youtube.com/watch?v=ko24BZXdK8c&pp=ygUNbmFkYSBwZXJzb25hbA%3D%3D" target="_blank"><button
-              class="botonesreproductor">
+            </a>
+          <a href="https://www.youtube.com/watch?v=ko24BZXdK8c&pp=ygUNbmFkYSBwZXJzb25hbA%3D%3D" target="_blank" class="botonesreproductor">
               <p class="textoBoton">5</p>
               <img src="./img/album-nada-personal.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Nada Personal - Remasterizado 2007
               </p>
-            </button></a>
-          <a href="https://www.youtube.com/watch?v=lGptyREttJ4&pp=ygUIcHJvZnVnb3M%3D" target="_blank"><button
-              class="botonesreproductor">
+            </a>
+          <a href="https://www.youtube.com/watch?v=lGptyREttJ4&pp=ygUIcHJvZnVnb3M%3D" target="_blank" class="botonesreproductor">
               <p class="textoBoton">6</p>
               <img src="./img/album-signos.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Prófugos - Remasterizado 2007
               </p>
-            </button></a>
+            </a>
           <a href="https://www.youtube.com/watch?v=AVEDgT_lG60&pp=ygUYZW4gbGEgY2l1ZGFkIGRlIGxhIGZ1cmlh"
-            target="_blank"><button class="botonesreproductor">
+            target="_blank" class="botonesreproductor">
               <p class="textoBoton">7</p>
               <img src="./img/album-doble-vida.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 En La Ciudad De La Furia - Remasterizado 2007
               </p>
-            </button></a>
-          <a href="https://www.youtube.com/watch?v=qt11aXRwMiA" target="_blank"><button class="botonesreproductor">
+            </a>
+          <a href="https://www.youtube.com/watch?v=qt11aXRwMiA" target="_blank" class="botonesreproductor">
               <p class="textoBoton">8</p>
               <img src="./img/album-comfort.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Té Para 3 - MTV Unplugged
               </p>
-            </button></a>
-          <a href="https://www.youtube.com/watch?v=4OvhrzXu4Yo&pp=ygUPZW50cmUgY2FuaWJhbGVz" target="_blank"><button
-              class="botonesreproductor">
+            </a>
+          <a href="https://www.youtube.com/watch?v=4OvhrzXu4Yo&pp=ygUPZW50cmUgY2FuaWJhbGVz" target="_blank" class="botonesreproductor">
               <p class="textoBoton">9</p>
               <img src="./img/album-animal.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Entre Caníbales - Remasterizado 2007
               </p>
-            </button></a>
+            </a>
           <a href="https://www.youtube.com/watch?v=HBO2nDIYi0E&pp=ygUQem9vbSBzb2RhIHN0ZXJlbw%3D%3D"
-            target="_blank"><button class="botonesreproductor">
+            target="_blank" class="botonesreproductor">
               <p class="textoBoton">10</p>
               <img src="./img/album-sueno-stereo.jpg" alt="" class="portadaAlbum" />
               <p class="textoBotonCancion">
                 Zoom - Remasterizado 2007
               </p>
-            </button></a>
+            </a>
         </div>
       </div>
     </section>
-    <!-- ------------------------------- DISCOGRAFIA ----------------------------------- -->
+    <!-- DISCOGRAFIA -->
 
     <section id="Discografía">
       <div data-aos="fade-down" data-aos-duration="1000">
@@ -245,7 +238,6 @@
               <h3>Nada Personal</h3>
               <p><span>Publicación</span> 21 de Noviembre 1985</p>
               <p><span>Duración</span> 39:51 </p>
-              </p>
             </div>
             <img src="./img/album-nada-personal.jpg" alt="nada-personal.png" />
 
@@ -314,7 +306,7 @@
       </div>
     </section>
 
-    <!-- -------------- Tienda ---------------- -->
+    <!-- Tienda -->
 
     <section id="Tienda">
 
@@ -324,7 +316,7 @@
             <h2>Tienda</h2>
             <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
               <div class="carousel-inner">
-                <!---------------------Produto: Remera--------------------------->
+                <!-- Produto: Remera -->
                 <div class="carousel-item active">
                   <div class="row">
 
@@ -366,7 +358,7 @@
                   </div>
                 </div>
 
-                <!-------------------------Produto: Buzo ---------------------------->
+                <!-- Produto: Buzo -->
 
                 <div class="carousel-item">
                   <div class="row">
@@ -409,7 +401,7 @@
                   </div>
                 </div>
 
-                <!-------------------------Produto: Gorra-------------------------->
+                <!-- Produto: Gorra -->
                 <div class="carousel-item">
                   <div class="row">
 
@@ -449,7 +441,7 @@
                   </div>
                 </div>
 
-                <!--------------------Produto: Taza---------------------->
+                <!-- Produto: Taza -->
 
                 <div class="carousel-item">
                   <div class="row">
@@ -489,7 +481,7 @@
 
                   </div>
                 </div>
-                <!--------------------------Produto: Accesorio--------------------->
+                <!-- Produto: Accesorio -->
                 <div class="carousel-item">
                   <div class="row">
 
@@ -527,7 +519,7 @@
                     </div>
 
                   </div>
-                  <!-------------------Boton del Carrusel-------------------------->
+                  <!-- Boton del Carrusel -->
 
                 </div>
 
@@ -544,6 +536,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
     </section>
 

@@ -181,19 +181,31 @@ header {
     justify-content: center;
 }
 
-#login-button #inicio-sesion {
-    right: 0;
+#loginDiv{
     position: absolute;
-    top: 3vh;
+    right: 0;
+    visibility: hidden;
+    width: auto;
+}
+
+#loginDiv.active{
+    visibility: visible;
+}
+
+#loginDiv:hover{
+    visibility: visible;
+}
+
+#loginDiv #inicio-sesion {
+    
     width: 450px;
     padding: 35px;
 }
 
-#login-button #inicio-sesion .sec-sesion {
+#loginDiv #inicio-sesion .sec-sesion {
     position: absolute;
-    top: 6vh;
     right: 0;
-    
+    top: 50px;
 }
 
 .sec-sesion {
@@ -299,6 +311,21 @@ header {
 
 }
 
+.registroP{
+    width: auto;
+    margin: 10px 0;
+    color: var(--bg-color);
+}
+
+.registroP a{
+    margin-left: 5px;
+    color: var(--third-color);
+}
+
+.registroP a:hover{
+    
+    color: #c9bb00;
+}
 .sec-guardado #recordar-contraseña {
     background-color: var(--login-bg);
     width: auto;
@@ -316,7 +343,7 @@ header {
     border-radius: 10px;
     margin: 20px 0 10px 0;
     border: none;
-    background-color: var(--login-stroke);
+    background-color: #5e5e5e;
     color: #fff;
     font-weight: bolder;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.53);
@@ -366,7 +393,7 @@ input[type="checkbox"] {
 
 
 
-input[type="checkbox"]:checked {}
+/* input[type="checkbox"]:checked {} */
 
 input[type="checkbox"]:not(:disabled):checked {
     background-image: url('../img/check.png');
@@ -381,7 +408,7 @@ input[type="checkbox"]:disabled {
     background-color: var(--checkbox-disabled-bg-color);
 }
 
-input[type="checkbox"]:disabled:checked {}
+/* input[type="checkbox"]:disabled:checked {} */
 
 input[type="checkbox"]:not(:disabled):hover {
     background-color: #303030;
@@ -553,16 +580,22 @@ input{
 }
 
 .btn-banner {
-    width: auto;
-    padding: 10px 65px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    max-width: 300px;
+    padding: 10px;
+    margin: 15px 0;
     border-radius: 12.35px;
     border: none;
+    color: var(--secondary-color);
     background-color: var(--third-color);
     font-weight: bold;
 }
 
 .btn-banner:hover{
     background-color: rgb(250, 219, 80);
+    color: var(--secondary-color);
     transition: 0.5s;
 }
 
@@ -849,7 +882,7 @@ input{
     
 }
 
-.ventanaescucha a:hover .botonesreproductor{
+.botonesreproductor:hover{
     transition: 0.5s;
     background-color: #555555;
 }
@@ -1144,6 +1177,12 @@ footer {
     display: block;
 }
 
+#menu #menuHamburguesa.active {
+ 
+    background-image: url('../img/close.png');
+  
+}
+
 
 .invisible{
     display: block;
@@ -1286,17 +1325,8 @@ footer{
     padding: 0 10px;
 }
 
-.btn-banner-container{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-}
 
-.btn-banner{
-    width: 95%;
-}
+
 
 .gallery{
     order: 1;
@@ -1366,6 +1396,23 @@ footer{
     display: block;
     position: fixed;
     z-index: 3;
+}
+
+.btn-banner {
+    margin: auto auto 50px auto;
+    max-width: 95%;
+}
+
+#loginDiv{
+    visibility: hidden;
+}
+
+#loginDiv.active{
+    visibility: hidden;
+}
+
+#loginDiv:hover{
+    visibility: hidden;
 }
 
 }
