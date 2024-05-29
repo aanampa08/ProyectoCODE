@@ -155,8 +155,8 @@ function mostrar_registro() {
     sectionRegistro.append(form_registro);
 
     //validacion de nombre y apellido
-    inputNombre.addEventListener("keypress",(e)=>{
-        if(validarTexto(e)){
+    inputNombre.addEventListener("keyup",(e)=>{
+        if(expresiones.nombre.test(inputNombre.value)|| inputNombre.value==""){
             avisoNombre.style.visibility="hidden";
             avisoNombre.innerText="";
             inputNombre.classList.remove("error");
@@ -169,8 +169,8 @@ function mostrar_registro() {
         }
     });
     
-    inputApellido.addEventListener("keypress",(e)=>{
-        if(validarTexto(e)){
+    inputApellido.addEventListener("keyup",(e)=>{
+        if(expresiones.nombre.test(inputApellido.value) || inputApellido.value==""){
             avisoApellido.style.visibility="hidden";
             avisoApellido.innerText="";
             inputApellido.classList.remove("error");
@@ -277,18 +277,6 @@ const iniciarSesion = document.getElementById("iniciar-sesion").addEventListener
 });
 
 
-
-
-function validarTexto(event){
-    resultado=true;
-    console.log(event.key);
-    var patron=/^[a-zA-Z\s]*$/;
-    if(!patron.test(event.key)){
-        event.preventDefault();
-        resultado=false;
-    }
-    return resultado;
-}
 
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
